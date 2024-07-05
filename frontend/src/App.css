@@ -1,0 +1,27 @@
+/* src/App.css */
+
+.App {
+    display: flex;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.App.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+/* Add dark mode styles for other components as needed */
+.dark-mode .SideMenu {
+    background-color: #444;
+}
+
+.dark-mode .MainView {
+    background-color: #222;
+}
+
+.dark-mode .ImageModal {
+    background-color: #333;
+}
