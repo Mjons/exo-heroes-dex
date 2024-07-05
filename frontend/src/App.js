@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useState, useEffect } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
@@ -35,7 +33,13 @@ function AppContent() {
                     setError('Unexpected data format from server.');
                 }
 
-                setTraits(traitData);
+                if (typeof traitData === 'object' && traitData !== null) {
+                    setTraits(traitData);
+                } else {
+                    console.error('Expected traitData to be an object but got', typeof traitData);
+                    setError('Unexpected data format from server.');
+                }
+
                 setError(null);
             } catch (err) {
                 console.error('Error loading data:', err);
