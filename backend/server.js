@@ -1,13 +1,10 @@
-// backend/server.js
-
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
 const path = require('path');
 
 const app = express();
-//const PORT = process.env.PORT || 3001;
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors());
@@ -16,8 +13,8 @@ app.use(express.json());
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-// Additional specific route for images if needed
-app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
+// Serve images from the 'public/images' directory in the backend
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 // Mock data - initialize
 let nfts = [];
@@ -39,9 +36,6 @@ const loadData = async () => {
 // Call loadData when the server starts
 loadData();
 
-// Load data when server starts
-loadData();
-
 // API Routes
 app.get('/api/nfts', (req, res) => {
     res.json(nfts);
@@ -51,6 +45,7 @@ app.get('/api/traits', (req, res) => {
     res.json(traits);
 });
 
+// Serve the frontend application
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
 });
