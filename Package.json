@@ -1,5 +1,5 @@
 {
-  "name": "exo-heroes-explorer",
+  "name": "exo-heroes-dex",
   "version": "1.0.0",
   "scripts": {
     "start": "cd backend && npm start",
