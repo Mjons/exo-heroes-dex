@@ -8,6 +8,6 @@
     "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install"
   },
   "engines": {
-    "node": "18.x"
+    "node": "14.x"
   }
 }
