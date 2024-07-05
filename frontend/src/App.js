@@ -23,7 +23,18 @@ function AppContent() {
                 setLoading(true);
                 const nftData = await fetchNFTs();
                 const traitData = await fetchTraits();
-                setNfts(nftData);
+
+                // Log the fetched data to verify its structure
+                console.log('NFT Data:', nftData);
+                console.log('Trait Data:', traitData);
+
+                if (Array.isArray(nftData)) {
+                    setNfts(nftData);
+                } else {
+                    console.error('Expected nftData to be an array but got', typeof nftData);
+                    setError('Unexpected data format from server.');
+                }
+
                 setTraits(traitData);
                 setError(null);
             } catch (err) {
@@ -48,11 +59,11 @@ function AppContent() {
         setFilters(newFilters);
     };
 
-    const filteredNFTs = nfts.filter((nft) => {
+    const filteredNFTs = Array.isArray(nfts) ? nfts.filter((nft) => {
         return Object.entries(filters).every(([trait, value]) => {
             return nft.traits[trait] === value;
         });
-    });
+    }) : [];
 
     if (loading) {
         return <div>Loading...</div>;
