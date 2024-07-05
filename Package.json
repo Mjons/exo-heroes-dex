@@ -1,0 +1,11 @@
+{
+  "name": "exo-heroes-explorer",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
