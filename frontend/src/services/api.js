@@ -27,5 +27,5 @@ export const getFullImageUrl = (imageUrl) => {
     if (imageUrl.startsWith('http')) {
         return imageUrl;
     }
-    return `/${imageUrl}`;
+    return `${imageUrl}`;
 };
