@@ -174,7 +174,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -294,7 +294,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 2
@@ -434,7 +434,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 1,
         "Mouth": 4,
         "Eyes": 3
@@ -514,7 +514,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 4,
         "Eyes": 3
@@ -587,14 +587,14 @@
       "imageUrl": "/images/image_30.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Vomiting",
         "Eyes": "Frustrated"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 1,
         "Eyes": 3
@@ -647,14 +647,14 @@
       "imageUrl": "/images/image_33.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Angry",
         "Eyes": "Monocycle"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 2
@@ -767,14 +767,14 @@
       "imageUrl": "/images/image_39.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Quantum Cat Coat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Vampire",
         "Eyes": "Angry"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 4,
         "Eyes": 3
@@ -794,7 +794,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -934,7 +934,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -1014,7 +1014,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 1,
         "Eyes": 2
@@ -1154,7 +1154,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 2
@@ -1194,7 +1194,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 2
@@ -1214,7 +1214,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 6
@@ -1374,7 +1374,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 4
@@ -1394,7 +1394,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 6,
         "Eyes": 3
@@ -1454,7 +1454,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 2
@@ -1514,7 +1514,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 4
@@ -1534,7 +1534,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -1554,7 +1554,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 5,
         "Eyes": 2
@@ -1574,7 +1574,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 3
@@ -1674,7 +1674,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 2
@@ -1754,7 +1754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 2,
         "Eyes": 4
@@ -1794,7 +1794,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -1954,7 +1954,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 3,
         "Eyes": 3
@@ -2014,7 +2014,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 3
@@ -2254,7 +2254,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 2,
         "Eyes": 3
@@ -2274,7 +2274,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 4
@@ -2314,7 +2314,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 2,
         "Eyes": 2
@@ -2467,14 +2467,14 @@
       "imageUrl": "/images/image_124.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Mech Fabric",
         "Head": "Avalanche Hoodie",
         "Mouth": "Zipped",
         "Eyes": "Reading Glasses"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 5
@@ -2734,7 +2734,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 3
@@ -2754,7 +2754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 4
@@ -2774,7 +2774,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 4
@@ -2974,7 +2974,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 4
@@ -3054,7 +3054,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -3067,14 +3067,14 @@
       "imageUrl": "/images/image_154.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Aptos Tee",
         "Head": "Avalanche Hoodie",
         "Mouth": "Grinning",
         "Eyes": "Duo Color"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 2
@@ -3127,14 +3127,14 @@
       "imageUrl": "/images/image_157.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Monster Grin",
         "Eyes": "Third Eye"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 2
@@ -3254,7 +3254,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 2
@@ -3274,7 +3274,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 3
@@ -3287,14 +3287,14 @@
       "imageUrl": "/images/image_165.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Sad",
         "Eyes": "Reading Glasses"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 5
@@ -3314,7 +3314,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 6,
         "Eyes": 3
@@ -3334,7 +3334,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 2
@@ -3367,14 +3367,14 @@
       "imageUrl": "/images/image_169.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Joker",
         "Eyes": "Night Vision Goggles"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 3
@@ -3494,7 +3494,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -3534,7 +3534,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 3
@@ -3614,7 +3614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 5,
         "Eyes": 6
@@ -3714,7 +3714,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 3
@@ -3754,7 +3754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -3854,7 +3854,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 4
@@ -3894,7 +3894,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 4
@@ -3914,7 +3914,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 1,
         "Mouth": 5,
         "Eyes": 6
@@ -4094,7 +4094,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 5,
         "Eyes": 1
@@ -4127,14 +4127,14 @@
       "imageUrl": "/images/image_207.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Soldier",
         "Head": "Avalanche Hoodie",
         "Mouth": "Gecko",
         "Eyes": "Star"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 3,
         "Head": 2,
         "Mouth": 4,
         "Eyes": 4
@@ -4274,7 +4274,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 3
@@ -4434,7 +4434,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 3
@@ -4467,14 +4467,14 @@
       "imageUrl": "/images/image_224.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Surprised",
         "Eyes": "Sad"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 4
@@ -4614,7 +4614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 4
@@ -4754,7 +4754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 4
@@ -4774,7 +4774,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 4
@@ -4834,7 +4834,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 4
@@ -4894,7 +4894,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 2
@@ -4914,7 +4914,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -4954,7 +4954,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 4
@@ -4974,7 +4974,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 3
@@ -5047,14 +5047,14 @@
       "imageUrl": "/images/image_253.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Soldier",
         "Head": "Avalanche Hoodie",
         "Mouth": "Gecko",
         "Eyes": "Star"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 3,
         "Head": 2,
         "Mouth": 4,
         "Eyes": 4
@@ -5087,14 +5087,14 @@
       "imageUrl": "/images/image_255.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Shocked",
         "Eyes": "Reading Glasses"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 5
@@ -5174,7 +5174,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 4
@@ -5187,14 +5187,14 @@
       "imageUrl": "/images/image_260.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Monster Grin",
         "Eyes": "Angry"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 3
@@ -5287,14 +5287,14 @@
       "imageUrl": "/images/image_265.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Surprised",
         "Eyes": "Awe"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 4
@@ -5314,7 +5314,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 3
@@ -5354,7 +5354,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 2
@@ -5374,7 +5374,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 2
@@ -5614,7 +5614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 2,
         "Eyes": 1
@@ -5674,7 +5674,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -5734,7 +5734,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 4
@@ -5754,7 +5754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 3
@@ -6067,14 +6067,14 @@
       "imageUrl": "/images/image_304.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Braces",
         "Eyes": "Confused"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 6,
         "Eyes": 3
@@ -6174,7 +6174,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 3
@@ -6214,7 +6214,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 4
@@ -6334,7 +6334,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 2
@@ -6394,7 +6394,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 3
@@ -6414,7 +6414,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 3
@@ -6694,7 +6694,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 3
@@ -6914,7 +6914,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 2
@@ -7114,7 +7114,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 4,
         "Eyes": 3
@@ -7154,7 +7154,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 8,
         "Mouth": 4,
         "Eyes": 2
@@ -7487,14 +7487,14 @@
       "imageUrl": "/images/image_375.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Cat Muzzle",
         "Eyes": "Annoyed"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 4
@@ -7554,7 +7554,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 4
@@ -7614,7 +7614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -7694,7 +7694,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 3
@@ -7874,7 +7874,7 @@
       },
       "traitRarity": {
         "Base": 3,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 1
@@ -7894,7 +7894,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 5
@@ -8027,14 +8027,14 @@
       "imageUrl": "/images/image_402.png",
       "traits": {
         "Base": "Clone",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Neutral",
         "Eyes": "Annoyed"
       },
       "traitRarity": {
         "Base": 3,
-        "Body": 5,
+        "Body": 16,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 4
@@ -8154,7 +8154,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 3
@@ -8174,7 +8174,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 6
@@ -8207,14 +8207,14 @@
       "imageUrl": "/images/image_411.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Trolling",
         "Eyes": "Sad"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 4
@@ -8334,7 +8334,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 2
@@ -8474,7 +8474,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 3
@@ -8614,7 +8614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 3
@@ -8687,14 +8687,14 @@
       "imageUrl": "/images/image_435.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Grinning",
         "Eyes": "Possessed"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 1
@@ -8954,7 +8954,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 4,
         "Eyes": 3
@@ -9014,7 +9014,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 3
@@ -9074,7 +9074,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 6,
         "Eyes": 4
@@ -9087,14 +9087,14 @@
       "imageUrl": "/images/image_455.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Sad",
         "Eyes": "Confused"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -9114,7 +9114,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -9234,7 +9234,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 2
@@ -9334,7 +9334,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 4
@@ -9394,7 +9394,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 4
@@ -9434,7 +9434,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 5
@@ -9494,7 +9494,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 1,
         "Mouth": 4,
         "Eyes": 4
@@ -9614,7 +9614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 6,
         "Eyes": 4
@@ -9667,14 +9667,14 @@
       "imageUrl": "/images/image_484.png",
       "traits": {
         "Base": "Clone",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Neutral",
         "Eyes": "Angry"
       },
       "traitRarity": {
         "Base": 3,
-        "Body": 5,
+        "Body": 16,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 3
@@ -9754,7 +9754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 4
@@ -9834,7 +9834,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -9894,7 +9894,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 2,
         "Eyes": 4
@@ -9934,7 +9934,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 6,
         "Eyes": 4
@@ -9954,7 +9954,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 4,
         "Eyes": 3
@@ -10007,14 +10007,14 @@
       "imageUrl": "/images/image_501.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "ExO Suit",
         "Head": "Avalanche Hoodie",
         "Mouth": "Terminator",
         "Eyes": "Wink"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 3,
         "Head": 2,
         "Mouth": 2,
         "Eyes": 3
@@ -10114,7 +10114,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 4
@@ -10147,14 +10147,14 @@
       "imageUrl": "/images/image_508.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Aptos Tee",
         "Head": "Avalanche Hoodie",
         "Mouth": "Grinning",
         "Eyes": "Duo Color"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 2
@@ -10187,14 +10187,14 @@
       "imageUrl": "/images/image_510.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Golden Teeth",
         "Eyes": "Neutral"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 4,
         "Eyes": 6
@@ -10254,7 +10254,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 4
@@ -10314,7 +10314,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 4
@@ -10414,7 +10414,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 4
@@ -10454,7 +10454,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 3
@@ -10474,7 +10474,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 4,
         "Eyes": 4
@@ -10734,7 +10734,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 1
@@ -10754,7 +10754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -10767,14 +10767,14 @@
       "imageUrl": "/images/image_539.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Bitcoin Puppets Mask",
         "Eyes": "Star"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 4
@@ -10794,7 +10794,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 3
@@ -10974,7 +10974,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 3
@@ -11074,7 +11074,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 8,
         "Mouth": 5,
         "Eyes": 3
@@ -11114,7 +11114,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -11194,7 +11194,7 @@
       },
       "traitRarity": {
         "Base": 3,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 6,
         "Eyes": 4
@@ -11207,14 +11207,14 @@
       "imageUrl": "/images/image_561.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Oogaverse Chompers",
         "Eyes": "Heart"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 4
@@ -11294,7 +11294,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 2,
         "Eyes": 4
@@ -11494,7 +11494,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -11534,7 +11534,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 3
@@ -11714,7 +11714,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 6,
         "Eyes": 2
@@ -11834,7 +11834,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 5
@@ -11854,7 +11854,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 3
@@ -11887,14 +11887,14 @@
       "imageUrl": "/images/image_595.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Polkadot",
         "Head": "Avalanche Hoodie",
         "Mouth": "Trolling",
         "Eyes": "Neutral"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 6
@@ -12027,14 +12027,14 @@
       "imageUrl": "/images/image_602.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Quantum Cat Coat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Joint",
         "Eyes": "Sad"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 4
@@ -12054,7 +12054,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 3
@@ -12094,7 +12094,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 8,
         "Mouth": 4,
         "Eyes": 2
@@ -12134,7 +12134,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 3
@@ -12414,7 +12414,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -12534,7 +12534,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 3
@@ -12567,14 +12567,14 @@
       "imageUrl": "/images/image_629.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Neutral",
         "Eyes": "Star"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 4
@@ -12747,14 +12747,14 @@
       "imageUrl": "/images/image_638.png",
       "traits": {
         "Base": "Clone",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Cigar",
         "Eyes": "Annoyed"
       },
       "traitRarity": {
         "Base": 3,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 4,
         "Eyes": 4
@@ -12887,14 +12887,14 @@
       "imageUrl": "/images/image_645.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Angry",
         "Eyes": "Reading Glasses"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 5
@@ -12914,7 +12914,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 4,
         "Eyes": 4
@@ -12994,7 +12994,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 2
@@ -13034,7 +13034,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 6
@@ -13094,7 +13094,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 5
@@ -13294,7 +13294,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 3
@@ -13307,14 +13307,14 @@
       "imageUrl": "/images/image_666.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Quantum Cat Coat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Joint",
         "Eyes": "Sad"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 4
@@ -13374,7 +13374,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 6,
         "Eyes": 6
@@ -13514,7 +13514,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 6
@@ -13627,14 +13627,14 @@
       "imageUrl": "/images/image_682.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "TON Tee",
         "Head": "Avalanche Hoodie",
         "Mouth": "Neutral",
         "Eyes": "Star"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 4
@@ -13654,7 +13654,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 4
@@ -13734,7 +13734,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -13874,7 +13874,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 4
@@ -13894,7 +13894,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 2
@@ -14054,7 +14054,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 3
@@ -14074,7 +14074,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 5
@@ -14267,14 +14267,14 @@
       "imageUrl": "/images/image_714.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Polkadot",
         "Head": "Avalanche Hoodie",
         "Mouth": "Trolling",
         "Eyes": "Neutral"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 6
@@ -14287,14 +14287,14 @@
       "imageUrl": "/images/image_715.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Zipped",
         "Eyes": "Frustrated"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 3
@@ -14574,7 +14574,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 4,
         "Eyes": 2
@@ -14614,7 +14614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 4,
         "Eyes": 2
@@ -14667,14 +14667,14 @@
       "imageUrl": "/images/image_734.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Joker",
         "Eyes": "Shocked"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -14794,7 +14794,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 6,
         "Eyes": 3
@@ -14834,7 +14834,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 4
@@ -14974,7 +14974,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 4
@@ -15014,7 +15014,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 1,
         "Mouth": 5,
         "Eyes": 4
@@ -15074,7 +15074,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 2
@@ -15147,14 +15147,14 @@
       "imageUrl": "/images/image_758.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Braces",
         "Eyes": "Frustrated"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 2,
         "Mouth": 6,
         "Eyes": 3
@@ -15427,14 +15427,14 @@
       "imageUrl": "/images/image_772.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Braces",
         "Eyes": "Annoyed"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 6,
         "Eyes": 4
@@ -15514,7 +15514,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 4
@@ -15727,14 +15727,14 @@
       "imageUrl": "/images/image_787.png",
       "traits": {
         "Base": "Clone",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Angry",
         "Eyes": "VR Headset"
       },
       "traitRarity": {
         "Base": 3,
-        "Body": 5,
+        "Body": 16,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 2
@@ -15754,7 +15754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 4
@@ -15794,7 +15794,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 3
@@ -15834,7 +15834,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 5
@@ -15854,7 +15854,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 5,
         "Eyes": 2
@@ -15974,7 +15974,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 4
@@ -16027,14 +16027,14 @@
       "imageUrl": "/images/image_802.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Tuxedo",
         "Head": "Avalanche Hoodie",
         "Mouth": "Joint",
         "Eyes": "Reading Glasses"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 5
@@ -16107,14 +16107,14 @@
       "imageUrl": "/images/image_806.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Polkadot",
         "Head": "Avalanche Hoodie",
         "Mouth": "Grinning",
         "Eyes": "Cyber"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 3
@@ -16314,7 +16314,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 3
@@ -16327,14 +16327,14 @@
       "imageUrl": "/images/image_817.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Avalanche Hoodie",
         "Mouth": "Maniac",
         "Eyes": "Duo Color"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 2,
         "Mouth": 2,
         "Eyes": 2
@@ -16414,7 +16414,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 8,
         "Mouth": 5,
         "Eyes": 4
@@ -16534,7 +16534,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 5
@@ -16554,7 +16554,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 4,
         "Eyes": 4
@@ -16594,7 +16594,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 3
@@ -16614,7 +16614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 2,
         "Eyes": 3
@@ -16634,7 +16634,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 2,
         "Eyes": 3
@@ -16654,7 +16654,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 3
@@ -16754,7 +16754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -16774,7 +16774,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 2
@@ -16874,7 +16874,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 4,
         "Eyes": 3
@@ -16894,7 +16894,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -16954,7 +16954,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 4
@@ -16974,7 +16974,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -16994,7 +16994,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 6
@@ -17014,7 +17014,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 2
@@ -17027,14 +17027,14 @@
       "imageUrl": "/images/image_852.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Terminator",
         "Eyes": "Cyber"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 3
@@ -17054,7 +17054,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 6
@@ -17107,14 +17107,14 @@
       "imageUrl": "/images/image_856.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Sighing",
         "Eyes": "Monocycle"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 2
@@ -17134,7 +17134,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 6,
         "Eyes": 4
@@ -17214,7 +17214,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 4,
         "Eyes": 5
@@ -17614,7 +17614,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 4
@@ -17734,7 +17734,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 3
@@ -17754,7 +17754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 4
@@ -17854,7 +17854,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 3
@@ -18054,7 +18054,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 3
@@ -18174,7 +18174,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 2
@@ -18214,7 +18214,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 6,
         "Eyes": 3
@@ -18314,7 +18314,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 4,
         "Eyes": 4
@@ -18394,7 +18394,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 4
@@ -18514,7 +18514,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 4,
         "Eyes": 2
@@ -18534,7 +18534,7 @@
       },
       "traitRarity": {
         "Base": 3,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 4
@@ -18674,7 +18674,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 2
@@ -18687,14 +18687,14 @@
       "imageUrl": "/images/image_935.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Monster Grin",
         "Eyes": "Silly Glasses"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 2
@@ -18874,7 +18874,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 5,
         "Eyes": 3
@@ -18914,7 +18914,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 3
@@ -19134,7 +19134,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 6,
         "Eyes": 5
@@ -19154,7 +19154,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 2,
         "Eyes": 3
@@ -19274,7 +19274,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 5,
         "Mouth": 5,
         "Eyes": 4
@@ -19334,7 +19334,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 3
@@ -19374,7 +19374,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 4
@@ -19474,7 +19474,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 6,
         "Eyes": 3
@@ -19487,14 +19487,14 @@
       "imageUrl": "/images/image_975.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Labcoat",
         "Head": "Hoodie",
         "Mouth": "Smiling",
         "Eyes": "Neutral"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 16,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 6
@@ -19554,7 +19554,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 5
@@ -19574,7 +19574,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 5,
         "Mouth": 3,
         "Eyes": 2
@@ -19594,7 +19594,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 2
@@ -19754,7 +19754,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 3,
         "Mouth": 5,
         "Eyes": 4
@@ -19774,7 +19774,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 4,
         "Mouth": 3,
         "Eyes": 1
@@ -19847,14 +19847,14 @@
       "imageUrl": "/images/image_993.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Mech Fabric",
         "Head": "Avalanche Hoodie",
         "Mouth": "Zipped",
         "Eyes": "Reading Glasses"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 3,
         "Eyes": 5
@@ -19894,7 +19894,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 3,
         "Mouth": 3,
         "Eyes": 2
@@ -19927,14 +19927,14 @@
       "imageUrl": "/images/image_997.png",
       "traits": {
         "Base": "Default",
-        "Body": "Hoodie",
+        "Body": "Polkadot",
         "Head": "Avalanche Hoodie",
         "Mouth": "Neutral",
         "Eyes": "Confused"
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 5,
+        "Body": 4,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 3
@@ -19954,7 +19954,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 12,
+        "Body": 16,
         "Head": 2,
         "Mouth": 5,
         "Eyes": 2
@@ -19974,7 +19974,7 @@
       },
       "traitRarity": {
         "Base": 97,
-        "Body": 3,
+        "Body": 4,
         "Head": 4,
         "Mouth": 6,
         "Eyes": 3
@@ -20007,138 +20007,137 @@
       "Default"
     ],
     "Body": [
-      "Aptos Tee",
-      "Bitcoin Labcoat",
-      "Casper Blazer",
-      "Cosmos Tee",
-      "Denim Jacket",
-      "Disco Suit",
       "ExO Suit",
+      "Parka",
+      "Aptos Tee",
+      "Polo",
       "Firefighter",
-      "Fuel Coat",
-      "Hoodie",
-      "Kongz Fur",
-      "Labcoat",
-      "Labcoat Bright",
+      "Royal",
       "Leather Jacket",
-      "Lumberjack",
+      "Tuxedo",
+      "Ronin Jacket",
+      "Kongz Fur",
+      "TON Tee",
+      "Disco Suit",
+      "Polkadot",
       "McOrdinals Polo",
       "Mech Fabric",
-      "Parka",
-      "Polkadot",
-      "Polo",
-      "Quantum Cat Coat",
-      "Ronin Jacket",
-      "Royal",
-      "Solana Tank Top",
-      "Soldier",
       "Street Rat Vest",
-      "TON Tee",
-      "Tuxedo",
-      "Windbreaker"
+      "Casper Blazer",
+      "Windbreaker",
+      "Labcoat",
+      "Quantum Cat Coat",
+      "Lumberjack",
+      "Labcoat Bright",
+      "Cosmos Tee",
+      "Fuel Coat",
+      "Solana Tank Top",
+      "Bitcoin Labcoat",
+      "Denim Jacket",
+      "Soldier"
     ],
     "Head": [
-      "Avalanche Hoodie",
-      "BTC Bandana",
-      "BTC Cap",
-      "Bald",
-      "Bears Deluxe Ears",
-      "Beret",
-      "Black Hair",
+      "Pepe Cap",
+      "Soldier Helmet",
       "Braindead",
-      "Crown",
-      "ETH Bandana",
-      "ETH Cap",
-      "Fire Fighter",
-      "Fire Hair",
-      "Helmet",
-      "Hoodie",
       "Icy Hair",
-      "Krownless",
+      "Hoodie",
+      "ETH Cap",
+      "Sayajin",
+      "Ordinal Cap",
+      "BTC Bandana",
+      "ETH Bandana",
+      "Fire Fighter",
+      "BTC Cap",
+      "Ronin Cap",
+      "Bald",
+      "Helmet",
+      "Beret",
+      "USB",
+      "Fire Hair",
+      "Red Bandana",
+      "Toque",
+      "Black Hair",
+      "Scientist Hair",
+      "Bears Deluxe Ears",
+      "Top Hat",
+      "White Hair",
+      "Avalanche Hoodie",
       "McOrdinals Cap",
+      "Rambo Bandana",
+      "Rocket",
+      "Krownless",
       "NYC Cap",
       "Ordinal Bandana",
-      "Ordinal Cap",
-      "Pepe Cap",
-      "Rambo Bandana",
-      "Red Bandana",
-      "Rocket",
-      "Ronin Cap",
-      "Sayajin",
-      "Scientist Hair",
-      "Soldier Helmet",
-      "Top Hat",
-      "Toque",
-      "USB",
-      "White Hair"
+      "Crown"
     ],
     "Mouth": [
-      "Angry",
-      "Bitcoin Puppets Mask",
-      "Braces",
-      "Cat Muzzle",
-      "Cigar",
-      "Gecko",
-      "Golden Teeth",
-      "Grandpa",
-      "Grinning",
-      "Hannibal Mask",
-      "Joint",
-      "Joker",
-      "Lipless",
-      "Maniac",
-      "Monster Grin",
-      "Neutral",
       "Oogaverse Chompers",
-      "Sad",
-      "Shocked",
-      "Sighing",
-      "Smiling",
       "Surprised",
       "Terminator",
-      "Tongue Out",
-      "Trolling",
-      "Ultrasonic",
       "Vampire",
+      "Monster Grin",
+      "Bitcoin Puppets Mask",
+      "Joker",
+      "Cat Muzzle",
+      "Neutral",
+      "Tongue Out",
+      "Sighing",
+      "Joint",
+      "Golden Teeth",
+      "Gecko",
+      "Grandpa",
+      "Ultrasonic",
+      "Grinning",
+      "Shocked",
+      "Sad",
+      "Braces",
+      "Maniac",
       "Vomiting",
-      "Zipped"
+      "Smiling",
+      "Hannibal Mask",
+      "Cigar",
+      "Zipped",
+      "Lipless",
+      "Trolling",
+      "Angry"
     ],
     "Eyes": [
-      "3D Glasses",
-      "80s Glasses",
-      "Angry",
-      "Annoyed",
-      "Awe",
-      "Confused",
-      "Cyber",
-      "Duo Color",
-      "Frustrated",
-      "Goggles",
-      "Happy",
-      "Heart",
-      "Heart Glasses",
-      "Insane",
-      "Laser",
-      "Monocycle",
       "Nerd Glasses",
+      "Silly Glasses",
+      "Reading Glasses",
+      "Surprised",
+      "Monocycle",
+      "Awe",
+      "Star",
+      "Thunder",
+      "Goggles",
+      "Wink",
+      "Sunglasses",
+      "Heart Glasses",
+      "Annoyed",
+      "NodeRocks Glasses",
       "Neutral",
       "Night Vision Goggles",
-      "NodeRocks Glasses",
-      "Possessed",
-      "Reading Glasses",
+      "Duo Color",
+      "Cyber",
+      "80s Glasses",
+      "Insane",
+      "Heart",
+      "Happy",
       "Ripped",
-      "Runestone Patch",
-      "Sad",
-      "Scientist Glasses",
-      "Shocked",
-      "Silly Glasses",
-      "Star",
-      "Sunglasses",
-      "Surprised",
-      "Third Eye",
-      "Thunder",
       "VR Headset",
-      "Wink"
+      "Shocked",
+      "Angry",
+      "Sad",
+      "Third Eye",
+      "Possessed",
+      "Laser",
+      "Confused",
+      "Frustrated",
+      "Runestone Patch",
+      "3D Glasses",
+      "Scientist Glasses"
     ]
   }
 }

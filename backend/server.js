@@ -10,11 +10,14 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the 'public' directory
+// Serve static files from the 'public' directory in the backend
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve static files from the 'build' directory in the frontend
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-// Serve images from the 'public/images' directory in the backend
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
+// Additional specific route for images if needed
+app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 
 // Mock data - initialize
 let nfts = [];
@@ -45,7 +48,7 @@ app.get('/api/traits', (req, res) => {
     res.json(traits);
 });
 
-// Serve the frontend application
+// Serve the frontend index.html for any other routes
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
 });
