@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useState, useEffect } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
@@ -17,8 +15,8 @@ function AppContent() {
     const [error, setError] = useState(null);
     const { isDarkMode, toggleTheme } = useTheme();
     const [bgColor, setBgColor] = useState('#00000000');
-    const [gridSize, setGridSize] = useState('small'); // New state for grid size
-    const [showFilters, setShowFilters] = useState(false); // New state for showing filters
+    const [gridSize, setGridSize] = useState('small');
+    const [showFilters, setShowFilters] = useState(false);
 
     useEffect(() => {
         const loadData = async () => {
@@ -85,6 +83,9 @@ function AppContent() {
 
     return (
         <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
+            <button onClick={toggleTheme} className="theme-toggle">
+                {isDarkMode ? '☀️' : '🌙'}
+            </button>
             <button onClick={() => setShowFilters(!showFilters)} className="filter-toggle">
                 {showFilters ? 'Hide Filters' : 'Filter'}
             </button>
@@ -94,8 +95,6 @@ function AppContent() {
                     traits={traits}
                     onFilterChange={handleFilterChange}
                     onBackgroundColorChange={handleBackgroundColorChange}
-                    toggleTheme={toggleTheme} // Pass the toggleTheme function to SideMenu
-                    isDarkMode={isDarkMode}   // Pass the isDarkMode state to SideMenu
                 />
             )}
             <MainView nfts={filteredNFTs} onNFTClick={handleNFTClick} bgColor={bgColor} gridSize={gridSize} />

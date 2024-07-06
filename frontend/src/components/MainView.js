@@ -1,5 +1,3 @@
-// src/components/MainView.js
-
 import React from 'react';
 import { getFullImageUrl } from '../services/api';
 import './MainView.css';
