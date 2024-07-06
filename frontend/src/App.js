@@ -1,3 +1,5 @@
+// src/App.js
+
 import React, { useState, useEffect } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
@@ -14,6 +16,9 @@ function AppContent() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { isDarkMode, toggleTheme } = useTheme();
+    const [bgColor, setBgColor] = useState('#00000000');
+    const [gridSize, setGridSize] = useState('small'); // New state for grid size
+    const [showFilters, setShowFilters] = useState(false); // New state for showing filters
 
     useEffect(() => {
         const loadData = async () => {
@@ -22,27 +27,20 @@ function AppContent() {
                 const nftData = await fetchNFTs();
                 const traitData = await fetchTraits();
 
-                // Log the fetched data to verify its structure
-                console.log('NFT Data:', nftData);
-                console.log('Trait Data:', traitData);
-
                 if (Array.isArray(nftData)) {
                     setNfts(nftData);
                 } else {
-                    console.error('Expected nftData to be an array but got', typeof nftData);
                     setError('Unexpected data format from server.');
                 }
 
                 if (typeof traitData === 'object' && traitData !== null) {
                     setTraits(traitData);
                 } else {
-                    console.error('Expected traitData to be an object but got', typeof traitData);
                     setError('Unexpected data format from server.');
                 }
 
                 setError(null);
             } catch (err) {
-                console.error('Error loading data:', err);
                 setError('Failed to load data. Please try again later.');
             } finally {
                 setLoading(false);
@@ -63,11 +61,19 @@ function AppContent() {
         setFilters(newFilters);
     };
 
-    const filteredNFTs = Array.isArray(nfts) ? nfts.filter((nft) => {
+    const handleBackgroundColorChange = (color) => {
+        setBgColor(color);
+    };
+
+    const toggleGridSize = () => {
+        setGridSize((prevSize) => (prevSize === 'small' ? 'large' : 'small'));
+    };
+
+    const filteredNFTs = nfts.filter((nft) => {
         return Object.entries(filters).every(([trait, value]) => {
             return nft.traits[trait] === value;
         });
-    }) : [];
+    });
 
     if (loading) {
         return <div>Loading...</div>;
@@ -79,11 +85,20 @@ function AppContent() {
 
     return (
         <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
-            <button onClick={toggleTheme} className="theme-toggle">
-                {isDarkMode ? '☀️' : '🌙'}
+            <button onClick={() => setShowFilters(!showFilters)} className="filter-toggle">
+                {showFilters ? 'Hide Filters' : 'Filter'}
             </button>
-            <SideMenu traits={traits} onFilterChange={handleFilterChange} />
-            <MainView nfts={filteredNFTs} onNFTClick={handleNFTClick} />
+
+            {showFilters && (
+                <SideMenu
+                    traits={traits}
+                    onFilterChange={handleFilterChange}
+                    onBackgroundColorChange={handleBackgroundColorChange}
+                    toggleTheme={toggleTheme} // Pass the toggleTheme function to SideMenu
+                    isDarkMode={isDarkMode}   // Pass the isDarkMode state to SideMenu
+                />
+            )}
+            <MainView nfts={filteredNFTs} onNFTClick={handleNFTClick} bgColor={bgColor} gridSize={gridSize} />
             {selectedNFT && (
                 <ImageModal nft={selectedNFT} onClose={handleCloseModal} />
             )}

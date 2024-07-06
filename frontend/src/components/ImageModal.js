@@ -1,11 +1,9 @@
-// src/components/ImageModal.js
-
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';
 
 const ImageModal = ({ nft, onClose }) => {
-    const [bgColor, setBgColor] = useState('transparent');
+    const [bgColor, setBgColor] = useState('#00000000'); // Transparent
     const [isSaving, setIsSaving] = useState(false);
     const canvasRef = useRef(null);
 
@@ -23,7 +21,7 @@ const ImageModal = ({ nft, onClose }) => {
             ctx.drawImage(img, 0, 0);
         };
         img.onerror = () => {
-            console.error('Failed to load image:', nft.imageUrl);
+            console.error('Failed to load image:', getFullImageUrl(nft.imageUrl));
         };
         img.src = getFullImageUrl(nft.imageUrl);
     }, [nft, bgColor]);
@@ -69,13 +67,23 @@ const ImageModal = ({ nft, onClose }) => {
                 <h2>{nft.name}</h2>
                 <canvas ref={canvasRef}></canvas>
                 <div className="color-options">
-                    <button onClick={() => handleColorChange('orange')}>Orange</button>
-                    <button onClick={() => handleColorChange('transparent')}>Transparent</button>
+                    <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
+                    <button onClick={() => handleColorChange('#00000000')}>Transparent</button>
                     <input
                         type="color"
                         onChange={(e) => handleColorChange(e.target.value)}
                         value={bgColor}
                     />
+                </div>
+                <div className="traits-section">
+                    <h3>Traits</h3>
+                    <ul>
+                        {Object.entries(nft.traits).map(([trait, value]) => (
+                            <li key={trait}>
+                                <strong>{trait}:</strong> {value} ({nft.traitRarity[trait]}%)
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <button
                     className="save-button"

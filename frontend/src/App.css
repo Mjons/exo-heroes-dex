@@ -11,11 +11,10 @@
     color: #fff;
 }
 
-
-
 /* Add dark mode styles for other components as needed */
 .dark-mode .SideMenu {
     background-color: #444;
+    color: #fff;
 }
 
 .dark-mode .MainView {
@@ -24,4 +23,245 @@
 
 .dark-mode .ImageModal {
     background-color: #333;
+    color: #fff;
+}
+
+.color-picker {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.color-option {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.color-option.transparent-option {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    /* Add border to make it visible */
+}
+
+.color-option.selected {
+    border: 2px solid #fff;
+}
+
+.modal-content {
+    background: var(--modal-background-color);
+    color: var(--modal-text-color);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 10px auto;
+}
+
+.dark-mode .modal-content {
+    --modal-background-color: #333;
+    --modal-text-color: #fff;
+    --traits-background-color: #444;
+    --traits-text-color: #fff;
+}
+
+.side-menu {
+    width: 250px;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.side-menu.collapsed {
+    transform: translateX(-100%);
+}
+
+.trait-filter {
+    margin-bottom: 10px;
+}
+
+.nft-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.nft-item {
+    width: 100%;
+    max-width: 150px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.nft-item:hover {
+    transform: scale(1.05);
+}
+
+.nft-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.color-picker {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.color-option.transparent-option {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #ccc;
+    /* Add border to make it visible */
+}
+
+.color-option.selected {
+    border: 2px solid #fff;
+}
+
+/* Modal specific styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--modal-background-color);
+    color: var(--modal-text-color);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 10px auto;
+}
+
+.dark-mode .modal-content {
+    --modal-background-color: #333;
+    --modal-text-color: #fff;
+    --traits-background-color: #444;
+    --traits-text-color: #fff;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--modal-text-color);
+}
+
+.color-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.color-options button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.color-options input[type="color"] {
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.traits-section {
+    margin-top: 20px;
+}
+
+.traits-section h3 {
+    margin-bottom: 10px;
+}
+
+.traits-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.traits-section li {
+    margin-bottom: 5px;
+}
+
+.save-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:disabled {
+    background-color: #cccccc;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+    .App {
+        flex-direction: column;
+    }
+
+    .side-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1000;
+        background-color: var(--modal-background-color);
+    }
+
+    .color-picker {
+        justify-content: center;
+    }
+
+    .nft-grid {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nft-item {
+        width: calc(50% - 20px);
+        max-width: none;
+        margin: 10px;
+    }
 }
