@@ -5,7 +5,8 @@
     height: 100vh;
     flex-direction: column;
     transition: background-color 0.3s, color 0.3s;
-    overflow: auto; /* Ensures the App container is scrollable */
+    overflow-y: auto; /* Ensures the App container is scrollable vertically */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 .App.dark-mode {
@@ -78,6 +79,7 @@ body.dark-mode {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     margin: 10px auto;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode .modal-content {

@@ -8,10 +8,11 @@
     margin-left: 260px;
     /* Ensure it does not overlap with the side menu */
     transition: background-color 0.3s, color 0.3s;
-    height: 100%; /* Ensures main view covers the full height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .main-view.dark-mode {
+    background-color: #333; /* Dark mode background color */
     color: #ffffff; /* Dark mode text color */
 }
 
@@ -27,6 +28,8 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     /* Create a responsive grid */
     gap: 10px;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .nft-item {
