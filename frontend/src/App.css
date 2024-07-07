@@ -3,12 +3,20 @@
 .App {
     display: flex;
     height: 100vh;
+    flex-direction: column;
     transition: background-color 0.3s, color 0.3s;
+    overflow: auto; /* Ensures the App container is scrollable */
 }
 
 .App.dark-mode {
     background-color: #333;
     color: #fff;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .filter-toggle-container {

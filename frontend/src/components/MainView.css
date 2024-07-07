@@ -7,6 +7,13 @@
     padding: 10px;
     margin-left: 260px;
     /* Ensure it does not overlap with the side menu */
+    transition: background-color 0.3s, color 0.3s;
+    height: 100%; /* Ensures main view covers the full height */
+}
+
+.main-view.dark-mode {
+    background-color: #121212; /* Dark mode background color */
+    color: #ffffff; /* Dark mode text color */
 }
 
 .nft-grid-container {
@@ -51,4 +58,13 @@
     text-align: center;
     font-size: 1.2em;
     color: #999;
+}
+
+/* Dark mode styles for specific elements */
+.nft-item.dark-mode {
+    border-color: #444;
+}
+
+.no-traits-message.dark-mode {
+    color: #bbb;
 }
