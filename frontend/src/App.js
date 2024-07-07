@@ -136,9 +136,16 @@ function AppContent() {
                     isDarkMode={isDarkMode}
                 />
             )}
-            <MainView nfts={filteredNFTs} onNFTClick={handleNFTClick} bgColor={bgColor} gridSize={gridSize} noMatchingTraits={noMatchingTraits} />
+            <MainView 
+                nfts={filteredNFTs} 
+                onNFTClick={handleNFTClick} 
+                bgColor={bgColor} 
+                gridSize={gridSize} 
+                noMatchingTraits={noMatchingTraits} 
+                isDarkMode={isDarkMode} 
+            />
             {selectedNFT && (
-                <ImageModal nft={selectedNFT} onClose={handleCloseModal} />
+                <ImageModal nft={selectedNFT} onClose={handleCloseModal} isDarkMode={isDarkMode} />
             )}
         </div>
     );

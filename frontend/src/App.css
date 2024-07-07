@@ -3,12 +3,21 @@
 .App {
     display: flex;
     height: 100vh;
+    flex-direction: column;
     transition: background-color 0.3s, color 0.3s;
+    overflow-y: auto; /* Ensures the App container is scrollable vertically */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 .App.dark-mode {
     background-color: #333;
     color: #fff;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .filter-toggle-container {
@@ -70,6 +79,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     margin: 10px auto;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode .modal-content {

@@ -1,4 +1,4 @@
-// /frontend/src/components/NFTcard.js
+// frontend/src/components/NFTCard.js
 
 import React from 'react';
 import { getFullImageUrl } from '../services/api';
