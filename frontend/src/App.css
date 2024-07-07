@@ -3,12 +3,30 @@
 .App {
     display: flex;
     height: 100vh;
+    flex-direction: column;
     transition: background-color 0.3s, color 0.3s;
+    overflow: auto; /* Ensures the App container is scrollable */
 }
 
 .App.dark-mode {
     background-color: #333;
     color: #fff;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-toggle-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Add dark mode styles for other components as needed */
@@ -35,16 +53,15 @@
 .color-option {
     width: 24px;
     height: 24px;
-    margin-left: 5px;
+    margin-right: 5px;
     cursor: pointer;
     border-radius: 4px;
-    transition: transform 0.2s;
+    border: 1px solid #ccc;
 }
 
 .color-option.transparent-option {
     background-color: transparent;
     border: 1px solid #ccc;
-    /* Add border to make it visible */
 }
 
 .color-option.selected {
@@ -52,7 +69,7 @@
 }
 
 .modal-content {
-    background: var(--modal-background-color);
+    background: white;
     color: var(--modal-text-color);
     padding: 20px;
     border-radius: 8px;
@@ -71,165 +88,88 @@
 }
 
 .side-menu {
-    width: 250px;
     padding: 10px;
-    transition: transform 0.3s;
-}
-
-.side-menu.collapsed {
-    transform: translateX(-100%);
+    width: 250px;
+    background-color: var(--sidebar-background-color);
+    color: var(--sidebar-text-color);
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
 }
 
 .trait-filter {
     margin-bottom: 10px;
 }
 
-.nft-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-    overflow-y: auto;
+.nft-grid-container {
     flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* Ensure items start from the top */
+    padding: 10px;
+    width: 100%;
+}
+
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    width: 100%;
 }
 
 .nft-item {
-    width: 100%;
-    max-width: 150px;
-    margin: 10px;
+    position: relative;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    background-color: var(--item-background-color);
 }
 
 .nft-item:hover {
     transform: scale(1.05);
 }
 
-.nft-info {
-    padding: 10px;
-    text-align: center;
+.nft-item .image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* Aspect ratio 1:1 to ensure perfect square */
+    overflow: hidden;
 }
 
-.color-picker {
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px;
-    flex-wrap: wrap;
-}
-
-.color-option {
-    width: 24px;
-    height: 24px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: transform 0.2s;
-}
-
-.color-option.transparent-option {
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #ccc;
-    /* Add border to make it visible */
-}
-
-.color-option.selected {
-    border: 2px solid #fff;
-}
-
-/* Modal specific styles */
-.modal-overlay {
-    position: fixed;
+.nft-item .image-container img {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    object-fit: cover;
 }
 
-.modal-content {
-    background: var(--modal-background-color);
-    color: var(--modal-text-color);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin: 10px auto;
-}
-
-.dark-mode .modal-content {
-    --modal-background-color: #333;
-    --modal-text-color: #fff;
-    --traits-background-color: #444;
-    --traits-text-color: #fff;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--modal-text-color);
-}
-
-.color-options {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.color-options button {
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.color-options input[type="color"] {
-    border: none;
+.nft-info {
     padding: 5px;
-    cursor: pointer;
+    text-align: center;
 }
 
-.traits-section {
+.nft-info h3 {
+    margin: 5px 0 0;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.no-traits-message {
+    text-align: center;
+    color: red;
     margin-top: 20px;
-}
-
-.traits-section h3 {
-    margin-bottom: 10px;
-}
-
-.traits-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.traits-section li {
-    margin-bottom: 5px;
-}
-
-.save-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.save-button:disabled {
-    background-color: #cccccc;
 }
 
 /* Mobile specific styles */

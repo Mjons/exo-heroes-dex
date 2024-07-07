@@ -1,4 +1,4 @@
-// /frontend/src/App.js
+// frontend/src/App.js
 
 import React, { useState, useEffect } from 'react';
 import MainView from './components/MainView';
@@ -100,7 +100,6 @@ function AppContent() {
     };
 
     const filteredNFTs = nfts.filter((nft) => {
-        // Combine category and search filters
         return Object.entries(filters).every(([filterType, filterValue]) => {
             if (filterType === 'searchTrait') {
                 return Object.values(nft.traits).includes(filterValue);
@@ -119,9 +118,6 @@ function AppContent() {
 
     return (
         <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
-            <button onClick={toggleTheme} className="theme-toggle">
-                {isDarkMode ? '☀️' : '🌙'}
-            </button>
             <button onClick={() => setShowFilters(!showFilters)} className="filter-toggle">
                 {showFilters ? 'Hide Filters' : 'Filter'}
             </button>
@@ -136,11 +132,20 @@ function AppContent() {
                     suggestedTraits={suggestedTraits}
                     onTraitSelect={handleTraitSelect}
                     onReset={handleReset}
+                    toggleTheme={toggleTheme}
+                    isDarkMode={isDarkMode}
                 />
             )}
-            <MainView nfts={filteredNFTs} onNFTClick={handleNFTClick} bgColor={bgColor} gridSize={gridSize} noMatchingTraits={noMatchingTraits} />
+            <MainView 
+                nfts={filteredNFTs} 
+                onNFTClick={handleNFTClick} 
+                bgColor={bgColor} 
+                gridSize={gridSize} 
+                noMatchingTraits={noMatchingTraits} 
+                isDarkMode={isDarkMode} 
+            />
             {selectedNFT && (
-                <ImageModal nft={selectedNFT} onClose={handleCloseModal} />
+                <ImageModal nft={selectedNFT} onClose={handleCloseModal} isDarkMode={isDarkMode} />
             )}
         </div>
     );

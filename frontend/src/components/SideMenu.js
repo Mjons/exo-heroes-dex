@@ -1,9 +1,10 @@
-// /frontend/src/components/SideMenu.js
+// frontend/src/components/SideMenu.js
 
 import React, { useState } from 'react';
+import { useTheme } from '../ThemeContext';
 import './SideMenu.css';
 
-const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery, setSearchQuery, suggestedTraits, onTraitSelect, onReset }) => {
+const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery, setSearchQuery, suggestedTraits, onTraitSelect, onReset, toggleTheme, isDarkMode }) => {
     const [selectedFilters, setSelectedFilters] = useState({});
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(0);
 
@@ -43,19 +44,19 @@ const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery
 
     return (
         <div className="side-menu">
-            <input 
-                type="text" 
-                placeholder="Search traits..." 
-                value={searchQuery} 
-                onChange={(e) => setSearchQuery(e.target.value)} 
+            <input
+                type="text"
+                placeholder="Search traits..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="search-bar" 
+                className="search-bar"
             />
             {suggestedTraits.length > 0 && (
                 <ul className="suggestions-list">
                     {suggestedTraits.map((trait, index) => (
-                        <li 
-                            key={index} 
+                        <li
+                            key={index}
                             className={index === activeSuggestionIndex ? 'active' : ''}
                             onClick={() => onTraitSelect(trait)}
                         >
@@ -79,11 +80,7 @@ const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery
                     className="color-option"
                     onChange={(e) => onBackgroundColorChange(e.target.value)}
                 />
-                <div
-                    className="color-option"
-                    style={{ backgroundColor: '#auto' }} // Placeholder for dynamic color option
-                    onClick={() => onBackgroundColorChange('dynamic')}
-                ></div>
+
             </div>
             <h2>Filter by Traits</h2>
             {Object.entries(traits).map(([trait, values]) => (
@@ -104,6 +101,9 @@ const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery
             ))}
             <button onClick={handleResetClick} className="reset-button">
                 Clear Filters
+            </button>
+            <button onClick={toggleTheme} className="dark-mode-toggle">
+                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
         </div>
     );

@@ -1,9 +1,10 @@
-// /frontend/src/components/ImageModal.js
+// frontend/src/components/ImageModal.js
+
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';
 
-const ImageModal = ({ nft, onClose }) => {
+const ImageModal = ({ nft, onClose, isDarkMode }) => {
     const [bgColor, setBgColor] = useState('#00000000'); // Transparent
     const [isSaving, setIsSaving] = useState(false);
     const canvasRef = useRef(null);
@@ -61,12 +62,14 @@ const ImageModal = ({ nft, onClose }) => {
 
     return (
         <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className={`modal-content ${isDarkMode ? 'dark-mode' : ''}`} onClick={(e) => e.stopPropagation()}>
                 <button className="close-button" onClick={onClose}>
                     &times;
                 </button>
                 <h2>{nft.name}</h2>
-                <canvas ref={canvasRef}></canvas>
+                <div className="canvas-container">
+                    <canvas ref={canvasRef}></canvas>
+                </div>
                 <div className="color-options">
                     <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
                     <button onClick={() => handleColorChange('#00000000')}>Transparent</button>

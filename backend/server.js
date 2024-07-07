@@ -1,10 +1,12 @@
+// backend/server.js
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors());
