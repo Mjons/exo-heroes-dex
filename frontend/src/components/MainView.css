@@ -1,4 +1,14 @@
-/* src/components/MainView.css */
+/* /frontend/src/components/MainView.css */
+
+.no-traits-message {
+    text-align: center;
+    font-size: 2.5em;  /* Increase font size */
+    color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Take up the full height of the view */
+}
 
 .main-view {
     flex: 1;

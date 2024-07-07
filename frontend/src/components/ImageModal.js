@@ -1,3 +1,4 @@
+// /frontend/src/components/ImageModal.js
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';

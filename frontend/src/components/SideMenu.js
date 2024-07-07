@@ -1,10 +1,11 @@
-// src/components/SideMenu.js
+// /frontend/src/components/SideMenu.js
 
 import React, { useState } from 'react';
 import './SideMenu.css';
 
-const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, toggleTheme, isDarkMode }) => {
+const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery, setSearchQuery, suggestedTraits, onTraitSelect, onReset }) => {
     const [selectedFilters, setSelectedFilters] = useState({});
+    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(0);
 
     const handleFilterChange = (trait, value) => {
         const newFilters = {
@@ -20,13 +21,49 @@ const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, toggleTheme
         onFilterChange(newFilters);
     };
 
-    const clearAllFilters = () => {
+    const handleKeyDown = (e) => {
+        if (e.key === 'ArrowDown') {
+            setActiveSuggestionIndex((prevIndex) =>
+                prevIndex === suggestedTraits.length - 1 ? 0 : prevIndex + 1
+            );
+        } else if (e.key === 'ArrowUp') {
+            setActiveSuggestionIndex((prevIndex) =>
+                prevIndex === 0 ? suggestedTraits.length - 1 : prevIndex - 1
+            );
+        } else if (e.key === 'Enter') {
+            onTraitSelect(suggestedTraits[activeSuggestionIndex]);
+        }
+    };
+
+    const handleResetClick = () => {
         setSelectedFilters({});
-        onFilterChange({});
+        setSearchQuery('');
+        onReset();
     };
 
     return (
-        <div className={`side-menu ${isDarkMode ? 'dark-mode' : ''}`}>
+        <div className="side-menu">
+            <input 
+                type="text" 
+                placeholder="Search traits..." 
+                value={searchQuery} 
+                onChange={(e) => setSearchQuery(e.target.value)} 
+                onKeyDown={handleKeyDown}
+                className="search-bar" 
+            />
+            {suggestedTraits.length > 0 && (
+                <ul className="suggestions-list">
+                    {suggestedTraits.map((trait, index) => (
+                        <li 
+                            key={index} 
+                            className={index === activeSuggestionIndex ? 'active' : ''}
+                            onClick={() => onTraitSelect(trait)}
+                        >
+                            {trait}
+                        </li>
+                    ))}
+                </ul>
+            )}
             <div className="color-picker">
                 <div
                     className="color-option"
@@ -55,7 +92,6 @@ const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, toggleTheme
                     <select
                         value={selectedFilters[trait] || ''}
                         onChange={(e) => handleFilterChange(trait, e.target.value)}
-                        className={isDarkMode ? 'dark-mode' : ''}
                     >
                         <option value="">All</option>
                         {values.map((value) => (
@@ -66,16 +102,8 @@ const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, toggleTheme
                     </select>
                 </div>
             ))}
-            {Object.keys(selectedFilters).length > 0 && (
-                <button
-                    onClick={clearAllFilters}
-                    className={`clear-filters ${isDarkMode ? 'dark-mode' : ''}`}
-                >
-                    Clear All Filters
-                </button>
-            )}
-            <button onClick={toggleTheme} className="theme-toggle">
-                {isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+            <button onClick={handleResetClick} className="reset-button">
+                Clear Filters
             </button>
         </div>
     );

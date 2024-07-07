@@ -1,4 +1,4 @@
-// src/ThemeContext.js
+// /frontend/src/ThemeContext.js
 
 import React, { createContext, useState, useContext } from 'react';
 

@@ -1,4 +1,4 @@
-// e.g., in frontend/src/components/NFTCard.js or similar
+// /frontend/src/components/NFTcard.js
 
 import React from 'react';
 import { getFullImageUrl } from '../services/api';

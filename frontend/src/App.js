@@ -1,3 +1,5 @@
+// /frontend/src/App.js
+
 import React, { useState, useEffect } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
@@ -17,6 +19,9 @@ function AppContent() {
     const [bgColor, setBgColor] = useState('#00000000');
     const [gridSize, setGridSize] = useState('small');
     const [showFilters, setShowFilters] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [suggestedTraits, setSuggestedTraits] = useState([]);
+    const [noMatchingTraits, setNoMatchingTraits] = useState(false);
 
     useEffect(() => {
         const loadData = async () => {
@@ -63,13 +68,44 @@ function AppContent() {
         setBgColor(color);
     };
 
-    const toggleGridSize = () => {
-        setGridSize((prevSize) => (prevSize === 'small' ? 'large' : 'small'));
+    const handleSearchChange = (query) => {
+        setSearchQuery(query);
+        if (query) {
+            const newSuggestedTraits = Object.keys(traits).reduce((acc, trait) => {
+                const matchingValues = traits[trait].filter(value =>
+                    value.toLowerCase().includes(query.toLowerCase())
+                );
+                return acc.concat(matchingValues);
+            }, []);
+            setSuggestedTraits(newSuggestedTraits);
+            setNoMatchingTraits(newSuggestedTraits.length === 0);
+        } else {
+            setSuggestedTraits([]);
+            setNoMatchingTraits(false);
+        }
+    };
+
+    const handleTraitSelect = (trait) => {
+        setFilters(prevFilters => ({ ...prevFilters, searchTrait: trait }));
+        setSearchQuery('');
+        setSuggestedTraits([]);
+        setNoMatchingTraits(false);
+    };
+
+    const handleReset = () => {
+        setFilters({});
+        setSearchQuery('');
+        setSuggestedTraits([]);
+        setNoMatchingTraits(false);
     };
 
     const filteredNFTs = nfts.filter((nft) => {
-        return Object.entries(filters).every(([trait, value]) => {
-            return nft.traits[trait] === value;
+        // Combine category and search filters
+        return Object.entries(filters).every(([filterType, filterValue]) => {
+            if (filterType === 'searchTrait') {
+                return Object.values(nft.traits).includes(filterValue);
+            }
+            return nft.traits[filterType] === filterValue;
         });
     });
 
@@ -95,9 +131,14 @@ function AppContent() {
                     traits={traits}
                     onFilterChange={handleFilterChange}
                     onBackgroundColorChange={handleBackgroundColorChange}
+                    searchQuery={searchQuery}
+                    setSearchQuery={handleSearchChange}
+                    suggestedTraits={suggestedTraits}
+                    onTraitSelect={handleTraitSelect}
+                    onReset={handleReset}
                 />
             )}
-            <MainView nfts={filteredNFTs} onNFTClick={handleNFTClick} bgColor={bgColor} gridSize={gridSize} />
+            <MainView nfts={filteredNFTs} onNFTClick={handleNFTClick} bgColor={bgColor} gridSize={gridSize} noMatchingTraits={noMatchingTraits} />
             {selectedNFT && (
                 <ImageModal nft={selectedNFT} onClose={handleCloseModal} />
             )}
