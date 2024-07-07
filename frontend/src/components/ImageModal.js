@@ -1,4 +1,5 @@
-// /frontend/src/components/ImageModal.js
+// frontend/src/components/ImageModal.js
+
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';
@@ -71,6 +72,7 @@ const ImageModal = ({ nft, onClose }) => {
                     <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
                     <button onClick={() => handleColorChange('#00000000')}>Transparent</button>
                     <input
+                        text="thing"
                         type="color"
                         onChange={(e) => handleColorChange(e.target.value)}
                         value={bgColor}
