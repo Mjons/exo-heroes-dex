@@ -1,7 +1,7 @@
+// src/services/api.js
 import axios from 'axios';
 
-// const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
-
+const API_BASE_URL = process.env.REACT_APP_API_URL || '';
 
 export const fetchNFTs = async () => {
     try {
@@ -27,9 +27,10 @@ export const getFullImageUrl = (imageUrl) => {
     if (imageUrl.startsWith('http')) {
         return imageUrl;
     }
+    return `${API_BASE_URL}${imageUrl}`;
     //For the live server
-    return `${imageUrl}`;
-
-    //For the Development server
-    // return `${API_BASE_URL}${imageUrl}`;
+    //   return `${imageUrl}`;
 };
+
+
+
