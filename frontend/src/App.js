@@ -145,7 +145,7 @@ function AppContent() {
                 isDarkMode={isDarkMode} 
             />
             {selectedNFT && (
-                <ImageModal nft={selectedNFT} onClose={handleCloseModal} />
+                <ImageModal nft={selectedNFT} onClose={handleCloseModal} isDarkMode={isDarkMode} />
             )}
         </div>
     );

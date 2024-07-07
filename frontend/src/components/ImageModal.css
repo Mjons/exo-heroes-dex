@@ -25,6 +25,12 @@
     margin: 10px auto;
     overflow-y: auto;
     max-height: 90%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-content.dark-mode {
+    background-color: #333;
+    color: #fff;
 }
 
 .close-button {
