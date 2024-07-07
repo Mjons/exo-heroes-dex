@@ -79,7 +79,11 @@ const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery
                     className="color-option"
                     onChange={(e) => onBackgroundColorChange(e.target.value)}
                 />
-                
+                <div
+                    className="color-option"
+                    style={{ backgroundColor: '#auto' }} // Placeholder for dynamic color option
+                    onClick={() => onBackgroundColorChange('dynamic')}
+                ></div>
             </div>
             <h2>Filter by Traits</h2>
             {Object.entries(traits).map(([trait, values]) => (
