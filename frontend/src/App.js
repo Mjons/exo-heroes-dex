@@ -17,7 +17,7 @@ function AppContent() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { isDarkMode, toggleTheme } = useTheme();
-    const [bgColor, setBgColor] = useState('#00000000');
+    const [bgColor, setBgColor] = useState('#FFA500'); // Default to orange
     const [showFilters, setShowFilters] = useState(window.innerWidth >= 768); // Open filters on desktop, closed on mobile
     const [searchQuery, setSearchQuery] = useState('');
     const [suggestedTraits, setSuggestedTraits] = useState([]);
@@ -140,6 +140,7 @@ function AppContent() {
                         onReset={handleReset}
                         isDarkMode={isDarkMode}
                         onClose={() => setShowFilters(false)}
+                        selectedColor={bgColor} // Pass bgColor as a prop
                     />
                 )}
                 <div className="main-content">

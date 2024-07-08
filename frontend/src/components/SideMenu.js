@@ -1,6 +1,6 @@
 // src/components/SideMenu.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SideMenu.css';
 
 const SideMenu = ({
@@ -13,10 +13,16 @@ const SideMenu = ({
     onTraitSelect,
     onReset,
     isDarkMode,
-    onClose
+    onClose,
+    selectedColor
 }) => {
     const [selectedTrait, setSelectedTrait] = useState(null);
     const [selectedFilters, setSelectedFilters] = useState({});
+    const [color, setColor] = useState(selectedColor); // Set initial color to selectedColor prop
+
+    useEffect(() => {
+        onBackgroundColorChange(color);
+    }, [color, onBackgroundColorChange]);
 
     const handleTraitClick = (trait) => {
         setSelectedTrait(trait);
@@ -35,7 +41,7 @@ const SideMenu = ({
     };
 
     const handleColorChange = (color) => {
-        onBackgroundColorChange(color);
+        setColor(color);
     };
 
     const handleResetClick = () => {
@@ -68,18 +74,19 @@ const SideMenu = ({
             <div className="color-picker">
                 <div className="color-options">
                     <div
-                        className="color-option"
+                        className={`color-option ${color === '#FFA500' ? 'selected' : ''}`}
                         style={{ backgroundColor: '#FFA500' }}
                         onClick={() => handleColorChange('#FFA500')}
                     ></div>
                     <div
-                        className="color-option transparent-option"
+                        className={`color-option ${color === 'transparent' ? 'selected' : ''} transparent-option`}
                         onClick={() => handleColorChange('transparent')}
                     ></div>
                     <input
                         type="color"
                         className="color-option color-input"
                         onChange={(e) => handleColorChange(e.target.value)}
+                        value={color}
                     />
                 </div>
             </div>
