@@ -4,7 +4,8 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';
 
-const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
+const ImageModal = ({ nft, onClose, isDarkMode }) => {
+    const [bgColor, setBgColor] = useState('#FFA500'); // Default to Orange
     const [isSaving, setIsSaving] = useState(false);
     const canvasRef = useRef(null);
 
@@ -17,8 +18,21 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
         img.onload = () => {
             canvas.width = img.width;
             canvas.height = img.height;
-            ctx.fillStyle = bgColor;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (bgColor === 'transparent') {
+                // Draw a gray grid background
+                const gridSize = 128;
+                for (let x = 0; x < canvas.width; x += gridSize) {
+                    for (let y = 0; y < canvas.height; y += gridSize) {
+                        ctx.fillStyle = ((x / gridSize + y / gridSize) % 2 === 0) ? '#ccc' : '#eee';
+                        ctx.fillRect(x, y, gridSize, gridSize);
+                    }
+                }
+            } else {
+                ctx.fillStyle = bgColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
             ctx.drawImage(img, 0, 0);
         };
         img.onerror = () => {
@@ -30,6 +44,10 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
     useEffect(() => {
         drawImage();
     }, [drawImage]);
+
+    const handleColorChange = (color) => {
+        setBgColor(color);
+    };
 
     const handleSave = async () => {
         setIsSaving(true);
@@ -65,6 +83,25 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
                 <div className="canvas-container">
                     <canvas ref={canvasRef}></canvas>
                 </div>
+                <div className="color-options">
+                    <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
+                    <button onClick={() => handleColorChange('transparent')}>Transparent</button>
+                    <button>
+                        Custom
+                        <input
+                            type="color"
+                            onChange={(e) => handleColorChange(e.target.value)}
+                            value={bgColor}
+                        />
+                    </button>
+                    <button
+                        className="save-button"
+                        onClick={handleSave}
+                        disabled={isSaving}
+                    >
+                        {isSaving ? 'Saving...' : 'Save Image'}
+                    </button>
+                </div>
                 <div className="traits-section">
                     <h3>Traits</h3>
                     <ul>
@@ -75,13 +112,6 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
                         ))}
                     </ul>
                 </div>
-                <button
-                    className="save-button"
-                    onClick={handleSave}
-                    disabled={isSaving}
-                >
-                    {isSaving ? 'Saving...' : 'Save Image'}
-                </button>
             </div>
         </div>
     );

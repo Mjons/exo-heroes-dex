@@ -1,6 +1,6 @@
 // src/components/SideMenu.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './SideMenu.css';
 
 const SideMenu = ({
@@ -13,16 +13,11 @@ const SideMenu = ({
     onTraitSelect,
     onReset,
     isDarkMode,
-    onClose,
-    selectedColor
+    onClose
 }) => {
     const [selectedTrait, setSelectedTrait] = useState(null);
     const [selectedFilters, setSelectedFilters] = useState({});
-    const [color, setColor] = useState(selectedColor); // Set initial color to selectedColor prop
-
-    useEffect(() => {
-        onBackgroundColorChange(color);
-    }, [color, onBackgroundColorChange]);
+    const [selectedColor, setSelectedColor] = useState('#FFA500'); // Default to Orange
 
     const handleTraitClick = (trait) => {
         setSelectedTrait(trait);
@@ -41,7 +36,8 @@ const SideMenu = ({
     };
 
     const handleColorChange = (color) => {
-        setColor(color);
+        setSelectedColor(color);
+        onBackgroundColorChange(color);
     };
 
     const handleResetClick = () => {
@@ -74,19 +70,18 @@ const SideMenu = ({
             <div className="color-picker">
                 <div className="color-options">
                     <div
-                        className={`color-option ${color === '#FFA500' ? 'selected' : ''}`}
+                        className={`color-option ${selectedColor === '#FFA500' ? 'selected' : ''}`}
                         style={{ backgroundColor: '#FFA500' }}
                         onClick={() => handleColorChange('#FFA500')}
                     ></div>
                     <div
-                        className={`color-option ${color === 'transparent' ? 'selected' : ''} transparent-option`}
+                        className={`color-option transparent-option ${selectedColor === 'transparent' ? 'selected' : ''}`}
                         onClick={() => handleColorChange('transparent')}
                     ></div>
                     <input
                         type="color"
-                        className="color-option color-input"
+                        className={`color-option color-input ${selectedColor !== '#FFA500' && selectedColor !== 'transparent' ? 'selected' : ''}`}
                         onChange={(e) => handleColorChange(e.target.value)}
-                        value={color}
                     />
                 </div>
             </div>
