@@ -18,7 +18,7 @@ function AppContent() {
     const [error, setError] = useState(null);
     const { isDarkMode, toggleTheme } = useTheme();
     const [bgColor, setBgColor] = useState('#00000000');
-    const [showFilters, setShowFilters] = useState(false);
+    const [showFilters, setShowFilters] = useState(window.innerWidth >= 768); // Open filters on desktop, closed on mobile
     const [searchQuery, setSearchQuery] = useState('');
     const [suggestedTraits, setSuggestedTraits] = useState([]);
     const [noMatchingTraits, setNoMatchingTraits] = useState(false);
@@ -164,7 +164,6 @@ function AppContent() {
         </div>
     );
 }
-
 
 function App() {
     return (
