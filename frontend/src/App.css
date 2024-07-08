@@ -5,13 +5,22 @@
     height: 100vh;
     flex-direction: column;
     transition: background-color 0.3s, color 0.3s;
-    overflow-y: auto; /* Ensures the App container is scrollable vertically */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    min-height: 100vh;
+    overflow-y: auto;
+    /* Ensures the App container is scrollable vertically */
+    overflow-x: hidden;
+    /* Prevents horizontal scrolling */
 }
 
 .App.dark-mode {
     background-color: #333;
     color: #fff;
+}
+
+@media (min-width: 768px) {
+    .App {
+        flex-direction: row;
+    }
 }
 
 body.dark-mode {
@@ -92,7 +101,7 @@ body.dark-mode {
 .side-menu {
     padding: 10px;
     width: 250px;
-    background-color: var(--sidebar-background-color);
+    background-color: #fff;
     color: var(--sidebar-text-color);
     transition: background-color 0.3s, color 0.3s;
     position: fixed;
@@ -119,15 +128,13 @@ body.dark-mode {
 
 .nft-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 10px;
     width: 100%;
 }
 
 .nft-item {
     position: relative;
-    border: 1px solid #ccc;
-    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
@@ -186,7 +193,7 @@ body.dark-mode {
         left: 0;
         height: 100%;
         z-index: 1000;
-        background-color: var(--modal-background-color);
+        background-color: #fff;
     }
 
     .color-picker {
@@ -205,5 +212,42 @@ body.dark-mode {
         width: calc(50% - 20px);
         max-width: none;
         margin: 10px;
+    }
+}
+
+
+/* // Application layout */
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-area {
+    display: flex;
+    flex: 1;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    width: 95%;
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .content-area {
+        flex-direction: column;
+    }
+
+    .grid-container {
+        width: 100%;
+        padding: 0 10px;
     }
 }
