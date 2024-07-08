@@ -1,0 +1,81 @@
+/* src/components/TopMenuBar.css */
+
+.top-menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-menu-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: #e0e0e0;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.top-menu-bar.dark-mode {
+    background-color: #333;
+}
+
+.top-menu-bar.dark-mode button {
+    background-color: #555;
+    color: #fff;
+}
+
+.top-menu-bar.dark-mode .social-link {
+    background-color: #444;
+}
+
+.top-menu-bar.dark-mode .social-link:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .top-menu-bar {
+        padding: 10px;
+    }
+
+    .social-links {
+        gap: 5px;
+    }
+
+    .social-link {
+        width: 25px;
+        height: 25px;
+    }
+
+    .social-icon {
+        width: 15px;
+        height: 15px;
+    }
+}
