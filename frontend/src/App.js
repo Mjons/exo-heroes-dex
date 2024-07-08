@@ -1,9 +1,10 @@
-// frontend/src/App.js
+// src/App.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
 import ImageModal from './components/ImageModal';
+import TopMenuBar from './components/TopMenuBar';
 import { fetchNFTs, fetchTraits } from './services/api';
 import { ThemeProvider, useTheme } from './ThemeContext';
 import './App.css';
@@ -17,7 +18,6 @@ function AppContent() {
     const [error, setError] = useState(null);
     const { isDarkMode, toggleTheme } = useTheme();
     const [bgColor, setBgColor] = useState('#00000000');
-    const [gridSize, setGridSize] = useState('small');
     const [showFilters, setShowFilters] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [suggestedTraits, setSuggestedTraits] = useState([]);
@@ -52,23 +52,23 @@ function AppContent() {
         loadData();
     }, []);
 
-    const handleNFTClick = (nft) => {
+    const handleNFTClick = useCallback((nft) => {
         setSelectedNFT(nft);
-    };
+    }, []);
 
-    const handleCloseModal = () => {
+    const handleCloseModal = useCallback(() => {
         setSelectedNFT(null);
-    };
+    }, []);
 
-    const handleFilterChange = (newFilters) => {
+    const handleFilterChange = useCallback((newFilters) => {
         setFilters(newFilters);
-    };
+    }, []);
 
-    const handleBackgroundColorChange = (color) => {
+    const handleBackgroundColorChange = useCallback((color) => {
         setBgColor(color);
-    };
+    }, []);
 
-    const handleSearchChange = (query) => {
+    const handleSearchChange = useCallback((query) => {
         setSearchQuery(query);
         if (query) {
             const newSuggestedTraits = Object.keys(traits).reduce((acc, trait) => {
@@ -83,21 +83,25 @@ function AppContent() {
             setSuggestedTraits([]);
             setNoMatchingTraits(false);
         }
-    };
+    }, [traits]);
 
-    const handleTraitSelect = (trait) => {
+    const handleTraitSelect = useCallback((trait) => {
         setFilters(prevFilters => ({ ...prevFilters, searchTrait: trait }));
         setSearchQuery('');
         setSuggestedTraits([]);
         setNoMatchingTraits(false);
-    };
+    }, []);
 
-    const handleReset = () => {
+    const handleReset = useCallback(() => {
         setFilters({});
         setSearchQuery('');
         setSuggestedTraits([]);
         setNoMatchingTraits(false);
-    };
+    }, []);
+
+    const toggleFilters = useCallback(() => {
+        setShowFilters(prev => !prev);
+    }, []);
 
     const filteredNFTs = nfts.filter((nft) => {
         return Object.entries(filters).every(([filterType, filterValue]) => {
@@ -109,47 +113,58 @@ function AppContent() {
     });
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="loading">Loading...</div>;
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return <div className="error">Error: {error}</div>;
     }
 
     return (
         <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
-            <button onClick={() => setShowFilters(!showFilters)} className="filter-toggle">
-                {showFilters ? 'Hide Filters' : 'Filter'}
-            </button>
-
-            {showFilters && (
-                <SideMenu
-                    traits={traits}
-                    onFilterChange={handleFilterChange}
-                    onBackgroundColorChange={handleBackgroundColorChange}
-                    searchQuery={searchQuery}
-                    setSearchQuery={handleSearchChange}
-                    suggestedTraits={suggestedTraits}
-                    onTraitSelect={handleTraitSelect}
-                    onReset={handleReset}
-                    toggleTheme={toggleTheme}
+            <TopMenuBar
+                toggleFilters={toggleFilters}
+                isDarkMode={isDarkMode}
+                toggleTheme={toggleTheme}
+            />
+            <div className="content-area">
+                {showFilters && (
+                    <SideMenu
+                        traits={traits}
+                        onFilterChange={handleFilterChange}
+                        onBackgroundColorChange={handleBackgroundColorChange}
+                        searchQuery={searchQuery}
+                        setSearchQuery={handleSearchChange}
+                        suggestedTraits={suggestedTraits}
+                        onTraitSelect={handleTraitSelect}
+                        onReset={handleReset}
+                        isDarkMode={isDarkMode}
+                        onClose={() => setShowFilters(false)}
+                    />
+                )}
+                <div className="main-content">
+                    <div className="grid-container">
+                        <MainView
+                            nfts={filteredNFTs}
+                            onNFTClick={handleNFTClick}
+                            bgColor={bgColor}
+                            noMatchingTraits={noMatchingTraits}
+                            isDarkMode={isDarkMode}
+                        />
+                    </div>
+                </div>
+            </div>
+            {selectedNFT && (
+                <ImageModal
+                    nft={selectedNFT}
+                    onClose={handleCloseModal}
                     isDarkMode={isDarkMode}
                 />
-            )}
-            <MainView 
-                nfts={filteredNFTs} 
-                onNFTClick={handleNFTClick} 
-                bgColor={bgColor} 
-                gridSize={gridSize} 
-                noMatchingTraits={noMatchingTraits} 
-                isDarkMode={isDarkMode} 
-            />
-            {selectedNFT && (
-                <ImageModal nft={selectedNFT} onClose={handleCloseModal} isDarkMode={isDarkMode} />
             )}
         </div>
     );
 }
+
 
 function App() {
     return (

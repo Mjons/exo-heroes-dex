@@ -1,109 +1,127 @@
-// frontend/src/components/SideMenu.js
+// src/components/SideMenu.js
 
 import React, { useState } from 'react';
-import { useTheme } from '../ThemeContext';
 import './SideMenu.css';
 
-const SideMenu = ({ traits, onFilterChange, onBackgroundColorChange, searchQuery, setSearchQuery, suggestedTraits, onTraitSelect, onReset, toggleTheme, isDarkMode }) => {
+const SideMenu = ({
+    traits,
+    onFilterChange,
+    onBackgroundColorChange,
+    searchQuery,
+    setSearchQuery,
+    suggestedTraits,
+    onTraitSelect,
+    onReset,
+    isDarkMode,
+    onClose
+}) => {
+    const [selectedTrait, setSelectedTrait] = useState(null);
     const [selectedFilters, setSelectedFilters] = useState({});
-    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(0);
 
-    const handleFilterChange = (trait, value) => {
-        const newFilters = {
-            ...selectedFilters,
-            [trait]: value,
-        };
-
-        if (value === '') {
-            delete newFilters[trait];
-        }
-
-        setSelectedFilters(newFilters);
-        onFilterChange(newFilters);
+    const handleTraitClick = (trait) => {
+        setSelectedTrait(trait);
     };
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'ArrowDown') {
-            setActiveSuggestionIndex((prevIndex) =>
-                prevIndex === suggestedTraits.length - 1 ? 0 : prevIndex + 1
-            );
-        } else if (e.key === 'ArrowUp') {
-            setActiveSuggestionIndex((prevIndex) =>
-                prevIndex === 0 ? suggestedTraits.length - 1 : prevIndex - 1
-            );
-        } else if (e.key === 'Enter') {
-            onTraitSelect(suggestedTraits[activeSuggestionIndex]);
+    const handleValueSelect = (trait, value) => {
+        const newFilters = { ...selectedFilters };
+        if (newFilters[trait] === value) {
+            delete newFilters[trait];
+        } else {
+            newFilters[trait] = value;
         }
+        setSelectedFilters(newFilters);
+        onFilterChange(newFilters);
+        setSelectedTrait(null);
+    };
+
+    const handleColorChange = (color) => {
+        onBackgroundColorChange(color);
     };
 
     const handleResetClick = () => {
         setSelectedFilters({});
-        setSearchQuery('');
+        setSelectedTrait(null);
         onReset();
     };
 
     return (
-        <div className="side-menu">
+        <div className={`side-menu ${isDarkMode ? 'dark-mode' : ''}`}>
+            <button className="close-button" onClick={onClose}>&times;</button>
+
             <input
                 type="text"
                 placeholder="Search traits..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={handleKeyDown}
                 className="search-bar"
             />
             {suggestedTraits.length > 0 && (
                 <ul className="suggestions-list">
                     {suggestedTraits.map((trait, index) => (
-                        <li
-                            key={index}
-                            className={index === activeSuggestionIndex ? 'active' : ''}
-                            onClick={() => onTraitSelect(trait)}
-                        >
+                        <li key={index} onClick={() => onTraitSelect(trait)}>
                             {trait}
                         </li>
                     ))}
                 </ul>
             )}
-            <div className="color-picker">
-                <div
-                    className="color-option"
-                    style={{ backgroundColor: '#FFA500' }}
-                    onClick={() => onBackgroundColorChange('#FFA500')}
-                ></div>
-                <div
-                    className="color-option transparent-option"
-                    onClick={() => onBackgroundColorChange('transparent')}
-                ></div>
-                <input
-                    type="color"
-                    className="color-option"
-                    onChange={(e) => onBackgroundColorChange(e.target.value)}
-                />
 
-            </div>
-            <h2>Filter by Traits</h2>
-            {Object.entries(traits).map(([trait, values]) => (
-                <div key={trait} className="trait-filter">
-                    <h3>{trait}</h3>
-                    <select
-                        value={selectedFilters[trait] || ''}
-                        onChange={(e) => handleFilterChange(trait, e.target.value)}
-                    >
-                        <option value="">All</option>
-                        {values.map((value) => (
-                            <option key={value} value={value}>
-                                {value}
-                            </option>
-                        ))}
-                    </select>
+            <div className="color-picker">
+                <h3>Background Color</h3>
+                <div className="color-options">
+                    <div
+                        className="color-option"
+                        style={{ backgroundColor: '#FFA500' }}
+                        onClick={() => handleColorChange('#FFA500')}
+                    ></div>
+                    <div
+                        className="color-option transparent-option"
+                        onClick={() => handleColorChange('transparent')}
+                    ></div>
+                    <input
+                        type="color"
+                        className="color-option color-input"
+                        onChange={(e) => handleColorChange(e.target.value)}
+                    />
                 </div>
-            ))}
+            </div>
+
+            <div className="filter-section">
+                <h3>Filter by Traits</h3>
+                <div className="breadcrumb">
+                    <span className="breadcrumb-item" onClick={() => setSelectedTrait(null)}>All Traits</span>
+                    {selectedTrait && (
+                        <>
+                            <span className="breadcrumb-separator">&gt;</span>
+                            <span className="breadcrumb-item">{selectedTrait}</span>
+                        </>
+                    )}
+                </div>
+                {!selectedTrait ? (
+                    <ul className="trait-list">
+                        {Object.keys(traits).map((trait) => (
+                            <li key={trait} onClick={() => handleTraitClick(trait)}>
+                                {trait}
+                                {selectedFilters[trait] && <span className="selected-indicator">•</span>}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <ul className="value-list">
+                        {traits[selectedTrait].map((value) => (
+                            <li
+                                key={value}
+                                onClick={() => handleValueSelect(selectedTrait, value)}
+                            >
+                                {value}
+                                {selectedFilters[selectedTrait] === value && <span className="selected-indicator">•</span>}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
             <button onClick={handleResetClick} className="reset-button">
                 Clear Filters
-            </button>
-            <button onClick={toggleTheme} className="dark-mode-toggle">
-                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
         </div>
     );
