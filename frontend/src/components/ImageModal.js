@@ -73,11 +73,13 @@ const ImageModal = ({ nft, onClose, isDarkMode }) => {
                 <div className="color-options">
                     <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
                     <button onClick={() => handleColorChange('#00000000')}>Transparent</button>
-                    <input
-                        type="color"
-                        onChange={(e) => handleColorChange(e.target.value)}
-                        value={bgColor}
-                    />
+                    <button>Custom
+                        <input
+                            type="color"
+                            onChange={(e) => handleColorChange(e.target.value)}
+                            value={bgColor}
+                        />
+                    </button>
                 </div>
                 <div className="traits-section">
                     <h3>Traits</h3>

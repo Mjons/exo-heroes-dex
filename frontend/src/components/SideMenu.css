@@ -1,15 +1,33 @@
 /* src/components/SideMenu.css */
 
 .side-menu {
+    padding: 10px;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-y: auto;
     position: fixed;
+    height: 100%;
+    width: 250px;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: var(--modal-background-color);
-    color: var(--modal-text-color);
-    padding: 20px;
-    overflow-y: auto;
+    z-index: 1000;
+}
+
+.side-menu.dark-mode {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
 }
 
 .search-bar {
@@ -20,118 +38,105 @@
     border-radius: 4px;
 }
 
-.suggestions-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    max-height: 150px;
-    overflow-y: auto;
-}
-
-.suggestions-list li {
-    padding: 8px;
-    cursor: pointer;
-}
-
-.suggestions-list li.active,
-.suggestions-list li:hover {
-    background-color: #f0f0f0;
-}
-
 .color-picker {
+    margin-bottom: 15px;
+}
+
+.color-picker h3 {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.color-options {
     display: flex;
-    justify-content: flex-start;
-    padding: 10px 0;
+    gap: 8px;
 }
 
 .color-option {
     width: 24px;
     height: 24px;
-    margin-right: 10px;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 4px;
-    transition: transform 0.2s;
+    border: 2px solid #ccc;
 }
 
-.color-option.transparent-option {
-    background-color: transparent;
-    border: 1px solid #ccc;
-}
-
-.color-option:hover {
-    transform: scale(1.1);
-}
-
-.trait-filter {
+.filter-section {
     margin-bottom: 15px;
 }
 
-.trait-filter h3 {
+.filter-section h3 {
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
-.trait-filter select {
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.breadcrumb-item {
+    cursor: pointer;
+}
+
+.breadcrumb-separator {
+    margin: 0 5px;
+}
+
+.trait-list,
+.value-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.trait-list li,
+.value-list li {
+    padding: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trait-list li:hover,
+.value-list li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.selected-indicator {
+    color: #007bff;
+    font-size: 16px;
+}
+
+.reset-button {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.reset-button,
-.dark-mode-toggle {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     background-color: transparent;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.reset-button:hover,
-.dark-mode-toggle:hover {
-    background-color: #f0f0f0;
-}
-
-.filter-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px 15px;
-    background-color: var(--modal-background-color);
-    color: var(--modal-text-color);
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.filter-toggle:hover {
-    background-color: #f0f0f0;
-}
-
-/* Dark mode styles */
-.dark-mode .side-menu {
-    background-color: #444;
-    color: #fff;
+    font-size: 12px;
 }
 
 .dark-mode .search-bar,
-.dark-mode .suggestions-list li,
-.dark-mode .trait-filter select,
-.dark-mode .reset-button,
-.dark-mode .dark-mode-toggle {
-    background-color: #555;
+.dark-mode .reset-button {
+    background-color: #444;
     color: #fff;
-    border: 1px solid #666;
+    border-color: #555;
 }
 
-.dark-mode .suggestions-list li.active,
-.dark-mode .suggestions-list li:hover,
-.dark-mode .reset-button:hover,
-.dark-mode .dark-mode-toggle:hover {
-    background-color: #666;
+.dark-mode .trait-list li:hover,
+.dark-mode .value-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .side-menu {
+        width: 100%;
+    }
 }
