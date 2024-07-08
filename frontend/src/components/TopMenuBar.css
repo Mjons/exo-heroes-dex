@@ -27,10 +27,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 64px;
+    height: 64px;
     background-color: #fff;
-    border-radius: 50%;
+    border-radius: 50%; /* Makes the container round */
+    overflow: hidden; /* Ensures the image stays within the container */
     transition: background-color 0.3s;
 }
 
@@ -39,8 +40,10 @@
 }
 
 .social-icon {
-    width: 20px;
-    height: 20px;
+    width: 100%; /* Ensures the image takes the full width of the container */
+    height: 100%; /* Ensures the image takes the full height of the container */
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 50%; /* Makes the image round */
 }
 
 .top-menu-bar.dark-mode {
@@ -70,12 +73,12 @@
     }
 
     .social-link {
-        width: 25px;
-        height: 25px;
+        width: 48px;
+        height: 48px;
     }
 
     .social-icon {
-        width: 15px;
-        height: 15px;
+        width: 48px;
+        height: 48px;
     }
 }

@@ -2,6 +2,8 @@
 
 import React from 'react';
 import './TopMenuBar.css';
+import myLogo1 from './my-logo1.png';
+import myLogo2 from './my-logo2.png';
 
 const TopMenuBar = ({ toggleFilters, isDarkMode, toggleTheme }) => {
     return (
@@ -9,10 +11,10 @@ const TopMenuBar = ({ toggleFilters, isDarkMode, toggleTheme }) => {
             <button onClick={toggleFilters}>Filters</button>
             <div className="social-links">
                 <a href="https://x.com/ExOHeroesNFT" target="_blank" rel="noopener noreferrer" className="social-link">
-                    <img src="/twitter-icon.png" alt="Twitter" className="social-icon" />
+                    <img src={myLogo1} alt="Logo 1" className="social-icon" />
                 </a>
-                <a href="https://discord.gg/Hn9fs7tcdB" target="_blank" rel="noopener noreferrer" className="social-link">
-                    <img src="/discord-icon.png" alt="Discord" className="social-icon" />
+                <a href="https://discord.com/invite/Hn9fs7tcdB" target="_blank" rel="noopener noreferrer" className="social-link">
+                    <img src={myLogo2} alt="Logo 2" className="social-icon" />
                 </a>
             </div>
             <button onClick={toggleTheme}>
