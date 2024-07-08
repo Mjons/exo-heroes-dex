@@ -4,8 +4,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';
 
-const ImageModal = ({ nft, onClose, isDarkMode }) => {
-    const [bgColor, setBgColor] = useState('#00000000'); // Transparent
+const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
     const [isSaving, setIsSaving] = useState(false);
     const canvasRef = useRef(null);
 
@@ -31,10 +30,6 @@ const ImageModal = ({ nft, onClose, isDarkMode }) => {
     useEffect(() => {
         drawImage();
     }, [drawImage]);
-
-    const handleColorChange = (color) => {
-        setBgColor(color);
-    };
 
     const handleSave = async () => {
         setIsSaving(true);
@@ -69,17 +64,6 @@ const ImageModal = ({ nft, onClose, isDarkMode }) => {
                 <h2>{nft.name}</h2>
                 <div className="canvas-container">
                     <canvas ref={canvasRef}></canvas>
-                </div>
-                <div className="color-options">
-                    <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
-                    <button onClick={() => handleColorChange('#00000000')}>Transparent</button>
-                    <button>Custom
-                        <input
-                            type="color"
-                            onChange={(e) => handleColorChange(e.target.value)}
-                            value={bgColor}
-                        />
-                    </button>
                 </div>
                 <div className="traits-section">
                     <h3>Traits</h3>

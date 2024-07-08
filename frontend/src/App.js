@@ -160,6 +160,7 @@ function AppContent() {
                     nft={selectedNFT}
                     onClose={handleCloseModal}
                     isDarkMode={isDarkMode}
+                    bgColor={bgColor} // Pass bgColor as a prop
                 />
             )}
         </div>
