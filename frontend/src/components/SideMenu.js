@@ -66,7 +66,6 @@ const SideMenu = ({
             )}
 
             <div className="color-picker">
-                <h3>Background Color</h3>
                 <div className="color-options">
                     <div
                         className="color-option"
