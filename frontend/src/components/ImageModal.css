@@ -123,6 +123,43 @@ canvas {
     background-color: #444;
 }
 
+.prev-link, .next-link {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+    font-size: 20px; /* Half the previous font size */
+    font-weight: bold; /* Make it bold */
+    position: relative;
+}
+
+.prev-link {
+    left: -40px; /* Adjust as needed */
+}
+
+.next-link {
+    right: -40px; /* Adjust as needed */
+}
+
+.prev-link:hover, .next-link:hover {
+    color: #0056b3;
+}
+
+.dark-mode .prev-link, .dark-mode .next-link {
+    color: #fff;
+}
+
+.dark-mode .prev-link:hover, .dark-mode .next-link:hover {
+    color: #ccc;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
 @media (max-width: 768px) {
     .modal-content {
         max-width: 100%;

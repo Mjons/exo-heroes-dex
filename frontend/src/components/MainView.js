@@ -1,15 +1,15 @@
-// src/components/MainView.js
-
 import React from 'react';
 import { getFullImageUrl } from '../services/api';
 import './MainView.css';
 
-const MainView = ({ nfts, onNFTClick, bgColor, noMatchingTraits, isDarkMode }) => {
+const MainView = ({ nfts, onNFTClick, bgColor, noMatchingTraits, isDarkMode, searchQuery }) => {
+    const displayMessage = noMatchingTraits && searchQuery.trim() !== '';
+
     return (
         <div className={`main-view ${isDarkMode ? 'dark-mode' : ''}`}>
-            {noMatchingTraits ? (
+            {displayMessage ? (
                 <div className={`no-traits-message ${isDarkMode ? 'dark-mode' : ''}`}>
-                    Trait does not exist!
+                    Trait does not exist, please type an existing trait name!
                 </div>
             ) : (
                 <div className="nft-grid-container">

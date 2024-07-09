@@ -121,6 +121,35 @@ function AppContent() {
         });
     });
 
+    useEffect(() => {
+        if (!searchQuery.trim()) {
+            setNoMatchingTraits(false);
+        } else {
+            setNoMatchingTraits(filteredNFTs.length === 0);
+        }
+    }, [filteredNFTs, searchQuery]);
+
+    const handleTraitClickFromModal = (trait, value) => {
+        setFilters({ [trait]: value });
+        setSelectedNFT(null);
+    };
+
+    const handlePrev = () => {
+        if (!selectedNFT) return;
+        const currentIndex = filteredNFTs.findIndex(nft => nft.id === selectedNFT.id);
+        if (currentIndex > 0) {
+            setSelectedNFT(filteredNFTs[currentIndex - 1]);
+        }
+    };
+
+    const handleNext = () => {
+        if (!selectedNFT) return;
+        const currentIndex = filteredNFTs.findIndex(nft => nft.id === selectedNFT.id);
+        if (currentIndex < filteredNFTs.length - 1) {
+            setSelectedNFT(filteredNFTs[currentIndex + 1]);
+        }
+    };
+
     if (loading) {
         return <div className="loading">Loading...</div>;
     }
@@ -160,6 +189,7 @@ function AppContent() {
                             bgColor={bgColor}
                             noMatchingTraits={noMatchingTraits}
                             isDarkMode={isDarkMode}
+                            searchQuery={searchQuery} // Pass searchQuery state
                         />
                     </div>
                 </div>
@@ -171,6 +201,9 @@ function AppContent() {
                     isDarkMode={isDarkMode}
                     bgColor={bgColor} // Pass bgColor state
                     onBgColorChange={handleBackgroundColorChange} // Pass the color change handler
+                    onTraitClick={handleTraitClickFromModal} // Pass trait click handler
+                    onPrev={handlePrev} // Pass the handlePrev function
+                    onNext={handleNext} // Pass the handleNext function
                 />
             )}
         </div>

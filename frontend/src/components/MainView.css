@@ -14,7 +14,7 @@
 .nft-grid {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    gap: 5px;
+    gap: 10px;
     width: 100%;
 }
 

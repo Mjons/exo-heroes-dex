@@ -2,10 +2,9 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
-import { throttle } from '../services/throttle';
 import './ImageModal.css';
 
-const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
+const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTraitClick, onPrev, onNext }) => {
     const [isSaving, setIsSaving] = useState(false);
     const [localBgColor, setLocalBgColor] = useState(bgColor); // Local state for background color
     const canvasRef = useRef(null);
@@ -47,15 +46,8 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
 
     const handleColorChange = (color) => {
         setLocalBgColor(color);
-        throttledBgColorChange(color);
+        onBgColorChange(color); // Notify parent component of color change
     };
-
-    const throttledBgColorChange = useCallback(
-        throttle((color) => {
-            onBgColorChange(color);
-        }, 100),
-        []
-    );
 
     const handleSave = async () => {
         setIsSaving(true);
@@ -87,7 +79,11 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
                 <button className="close-button" onClick={onClose}>
                     &times;
                 </button>
-                <h2>{nft.name}</h2>
+                <div className="modal-header">
+                    <span className="prev-link" onClick={onPrev}>{"<PREV"}</span>
+                    <h2>{nft.name}</h2>
+                    <span className="next-link" onClick={onNext}>{"NEXT>"}</span>
+                </div>
                 <div className="canvas-container">
                     <canvas ref={canvasRef}></canvas>
                 </div>
@@ -114,7 +110,13 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
                     <ul>
                         {Object.entries(nft.traits).map(([trait, value]) => (
                             <li key={trait}>
-                                <strong>{trait}:</strong> {value} ({nft.traitRarity[trait]}%)
+                                <strong>{trait}:</strong>
+                                <span
+                                    className="trait-link"
+                                    onClick={() => onTraitClick(trait, value)}
+                                >
+                                    {` ${value}`}
+                                </span>
                             </li>
                         ))}
                     </ul>
