@@ -2,8 +2,8 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
-import { debounce } from '../services/debounce';
-import { throttle } from '../services/throttle';
+import { debounce } from '../services/debounce'; // Import the debounce function
+import { throttle } from '../services/throttle'; // Import the throttle function
 import './ImageModal.css';
 
 const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTraitClick, onPrev, onNext }) => {
@@ -21,11 +21,9 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
         img.onload = () => {
             canvas.width = img.width;
             canvas.height = img.height;
-            if (localBgColor === 'transparent') {
+
+            if (localBgColor === 'transparent' && !isSavingImage) {
                 // Draw a gray grid background
-                if (isSavingImage) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                } else{
                 const gridSize = 128;
                 for (let x = 0; x < canvas.width; x += gridSize) {
                     for (let y = 0; y < canvas.height; y += gridSize) {
@@ -33,10 +31,12 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                         ctx.fillRect(x, y, gridSize, gridSize);
                     }
                 }
-            }
             } else {
-                ctx.fillStyle = localBgColor;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas for transparency
+                if (localBgColor !== 'transparent') {
+                    ctx.fillStyle = localBgColor;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
             }
 
             ctx.drawImage(img, 0, 0);
@@ -85,20 +85,21 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
 
         try {
             drawImage(true); // Redraw the image without the grid for saving
-            const dataUrl = canvas.toDataURL();
-            const link = document.createElement('a');
-            link.download = `${nft.name}_${localBgColor}.png`;
-            link.href = dataUrl;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            setTimeout(() => {
+                const dataUrl = canvas.toDataURL();
+                const link = document.createElement('a');
+                link.download = `${nft.name}_${localBgColor}.png`;
+                link.href = dataUrl;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                setIsSaving(false);
+                drawImage(); // Redraw the image with the grid after saving
+            }, 100);
         } catch (error) {
             console.error('Error saving image:', error);
             alert('Failed to save image. Please try again.');
-        } finally {
             setIsSaving(false);
-            drawImage(); // Redraw the image with the grid after saving
-
         }
     };
 
