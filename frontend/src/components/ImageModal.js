@@ -1,10 +1,8 @@
-// src/components/ImageModal.js
-
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';
 
-const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
+const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
     const [isSaving, setIsSaving] = useState(false);
     const [localBgColor, setLocalBgColor] = useState(bgColor); // Local state for background color
     const canvasRef = useRef(null);
@@ -53,6 +51,7 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
 
     const handleColorChange = (color) => {
         setLocalBgColor(color);
+        onBgColorChange(color); // Notify parent component of color change
     };
 
     const handleSave = async () => {
@@ -99,9 +98,16 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
                             value={localBgColor}
                         />
                     </button>
+                    <button
+                        className="save-button"
+                        onClick={handleSave}
+                        disabled={isSaving}
+                    >
+                        {isSaving ? 'Saving...' : 'Save Image'}
+                    </button>
                 </div>
                 <div className="traits-section">
-                    <h3>Traits</h3>
+                    <h3>Traits:</h3>
                     <ul>
                         {Object.entries(nft.traits).map(([trait, value]) => (
                             <li key={trait}>
@@ -110,13 +116,6 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
                         ))}
                     </ul>
                 </div>
-                <button
-                    className="save-button"
-                    onClick={handleSave}
-                    disabled={isSaving}
-                >
-                    {isSaving ? 'Saving...' : 'Save Image'}
-                </button>
             </div>
         </div>
     );

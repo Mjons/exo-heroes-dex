@@ -16,17 +16,16 @@
 .modal-content {
     background: white;
     color: var(--modal-text-color);
-    padding: 10px;
+    padding: 20px;
     border-radius: 8px;
-    max-width: 90%;
-    width: 400px;
-    max-height: 90%;
+    max-width: 500px;
+    width: 90%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: hidden;
+    overflow: hidden;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -47,9 +46,7 @@
 }
 
 h2 {
-    margin: 10px 0;
-    text-align: center;
-    font-size: 1.5em;
+    margin-top: 0;
 }
 
 .canvas-container {
@@ -58,8 +55,7 @@ h2 {
     align-items: center;
     flex-grow: 1;
     max-height: 50%;
-    margin-bottom: 10px;
-    width: 100%;
+    margin-bottom: 20px;
 }
 
 canvas {
@@ -71,7 +67,7 @@ canvas {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .color-options button,
@@ -79,13 +75,8 @@ canvas {
     cursor: pointer;
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 5px;
+    padding: 10px;
     transition: background-color 0.3s;
-    font-size: 0.9em;
-}
-
-.color-options input[type="color"] {
-    margin-left: 5px;
 }
 
 .color-options button:hover,
@@ -94,14 +85,13 @@ canvas {
 }
 
 .traits-section {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
 .traits-section h3 {
-    margin: 0 0 5px 0;
+    margin-bottom: 5px;
     text-align: center;
-    font-size: 1.2em;
 }
 
 .traits-section ul {
@@ -110,44 +100,33 @@ canvas {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .traits-section li {
     margin-bottom: 5px;
     width: 45%;
-    text-align: left;
-    font-size: 0.9em;
-    word-wrap: break-word;
-}
-
-.traits-section li strong {
-    display: inline-block;
-    width: 40%;
 }
 
 .save-button {
-    padding: 5px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    border: none;
     border-radius: 4px;
     background-color: var(--modal-background-color);
     color: var(--modal-text-color);
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-    font-size: 0.9em;
-    margin-left: 5px;
+    transition: background-color 0.3s;
 }
 
 .save-button:hover {
     background-color: #444;
-    border-color: #888;
 }
 
 @media (max-width: 768px) {
     .modal-content {
         max-width: 100%;
         max-height: 90%;
-        overflow-y: auto;
     }
 
     .traits-section ul {

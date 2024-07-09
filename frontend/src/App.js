@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useState, useEffect, useCallback } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
@@ -50,6 +48,17 @@ function AppContent() {
             }
         };
         loadData();
+
+        // Check screen width to determine initial filter state
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        setShowFilters(mediaQuery.matches);
+
+        const handleResize = () => {
+            setShowFilters(window.innerWidth >= 768);
+        };
+
+        mediaQuery.addListener(handleResize);
+        return () => mediaQuery.removeListener(handleResize);
     }, []);
 
     const handleNFTClick = useCallback((nft) => {
@@ -140,6 +149,7 @@ function AppContent() {
                         onReset={handleReset}
                         isDarkMode={isDarkMode}
                         onClose={() => setShowFilters(false)}
+                        bgColor={bgColor} // Pass bgColor state
                     />
                 )}
                 <div className="main-content">
@@ -159,7 +169,8 @@ function AppContent() {
                     nft={selectedNFT}
                     onClose={handleCloseModal}
                     isDarkMode={isDarkMode}
-                    bgColor={bgColor} // Pass the background color to the modal
+                    bgColor={bgColor} // Pass bgColor state
+                    onBgColorChange={handleBackgroundColorChange} // Pass the color change handler
                 />
             )}
         </div>
