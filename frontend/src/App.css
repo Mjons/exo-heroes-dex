@@ -105,7 +105,7 @@ body.dark-mode {
     color: var(--sidebar-text-color);
     transition: background-color 0.3s, color 0.3s;
     position: fixed;
-    top: 60px;
+    top: 100px;
     left: 0;
     height: 100%;
     overflow-y: auto;
