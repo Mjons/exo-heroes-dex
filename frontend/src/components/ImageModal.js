@@ -11,17 +11,21 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
     const [localBgColor, setLocalBgColor] = useState(bgColor); // Local state for background color
     const canvasRef = useRef(null);
 
-    const drawImage = useCallback(() => {
+    const drawImage = useCallback((isSavingImage = false) => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
         const img = new Image();
+        img.crossOrigin = 'Anonymous'; // Add this line to handle cross-origin images
         img.onload = () => {
             canvas.width = img.width;
             canvas.height = img.height;
             if (localBgColor === 'transparent') {
                 // Draw a gray grid background
+                if (isSavingImage) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                } else{
                 const gridSize = 128;
                 for (let x = 0; x < canvas.width; x += gridSize) {
                     for (let y = 0; y < canvas.height; y += gridSize) {
@@ -29,6 +33,7 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                         ctx.fillRect(x, y, gridSize, gridSize);
                     }
                 }
+            }
             } else {
                 ctx.fillStyle = localBgColor;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -79,6 +84,7 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
         }
 
         try {
+            drawImage(true); // Redraw the image without the grid for saving
             const dataUrl = canvas.toDataURL();
             const link = document.createElement('a');
             link.download = `${nft.name}_${localBgColor}.png`;
@@ -91,6 +97,8 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
             alert('Failed to save image. Please try again.');
         } finally {
             setIsSaving(false);
+            drawImage(); // Redraw the image with the grid after saving
+
         }
     };
 
