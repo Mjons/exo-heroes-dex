@@ -6,6 +6,30 @@
     overflow-x: hidden;
 }
 
+.zoom-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.zoom-controls button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.zoom-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.zoom-controls span {
+    margin: 0 10px;
+}
+
 .nft-grid-container {
     width: 100%;
     padding: 10px;
@@ -13,9 +37,28 @@
 
 .nft-grid {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
     gap: 10px;
     width: 100%;
+}
+
+.nft-grid.zoom-level-0 {
+    grid-template-columns: repeat(15, 1fr);
+}
+
+.nft-grid.zoom-level-1 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.nft-grid.zoom-level-2 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.nft-grid.zoom-level-3 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.nft-grid.zoom-level-4 {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .nft-item {
@@ -58,20 +101,51 @@
         padding: 5px !important;
     }
 
-    .nft-grid {
+    .nft-grid.zoom-level-0 {
         grid-template-columns: repeat(6, 1fr) !important;
-        gap: 5px !important;
+    }
+
+    .nft-grid.zoom-level-1 {
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+
+    .nft-grid.zoom-level-2 {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    .nft-grid.zoom-level-3 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .nft-grid.zoom-level-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .nft-item {
-        width: calc(30% - 2px) !important;
+        width: 100% !important;
         margin: 0 !important;
     }
 }
 
 /* Small mobile styles */
 @media screen and (max-width: 480px) {
-    .nft-grid {
+    .nft-grid.zoom-level-0 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .nft-grid.zoom-level-1 {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .nft-grid.zoom-level-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nft-grid.zoom-level-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nft-grid.zoom-level-4 {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

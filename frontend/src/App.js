@@ -189,7 +189,7 @@ function AppContent() {
                             bgColor={bgColor}
                             noMatchingTraits={noMatchingTraits}
                             isDarkMode={isDarkMode}
-                            searchQuery={searchQuery} // Pass searchQuery state
+                            searchQuery={searchQuery}
                         />
                     </div>
                 </div>
