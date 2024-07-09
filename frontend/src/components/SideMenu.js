@@ -1,7 +1,8 @@
 // src/components/SideMenu.js
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './SideMenu.css';
+import { throttle } from '../services/throttle';
 
 const SideMenu = ({
     traits,
@@ -17,7 +18,6 @@ const SideMenu = ({
 }) => {
     const [selectedTrait, setSelectedTrait] = useState(null);
     const [selectedFilters, setSelectedFilters] = useState({});
-    const [selectedColor, setSelectedColor] = useState('#FFA500'); // Default to Orange
 
     const handleTraitClick = (trait) => {
         setSelectedTrait(trait);
@@ -36,9 +36,15 @@ const SideMenu = ({
     };
 
     const handleColorChange = (color) => {
-        setSelectedColor(color);
-        onBackgroundColorChange(color);
+        throttledBgColorChange(color);
     };
+
+    const throttledBgColorChange = useCallback(
+        throttle((color) => {
+            onBackgroundColorChange(color);
+        }, 100),
+        []
+    );
 
     const handleResetClick = () => {
         setSelectedFilters({});
@@ -70,17 +76,17 @@ const SideMenu = ({
             <div className="color-picker">
                 <div className="color-options">
                     <div
-                        className={`color-option ${selectedColor === '#FFA500' ? 'selected' : ''}`}
+                        className="color-option"
                         style={{ backgroundColor: '#FFA500' }}
                         onClick={() => handleColorChange('#FFA500')}
                     ></div>
                     <div
-                        className={`color-option transparent-option ${selectedColor === 'transparent' ? 'selected' : ''}`}
+                        className="color-option transparent-option"
                         onClick={() => handleColorChange('transparent')}
                     ></div>
                     <input
                         type="color"
-                        className={`color-option color-input ${selectedColor !== '#FFA500' && selectedColor !== 'transparent' ? 'selected' : ''}`}
+                        className="color-option color-input"
                         onChange={(e) => handleColorChange(e.target.value)}
                     />
                 </div>

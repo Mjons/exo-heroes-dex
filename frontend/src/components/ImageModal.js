@@ -1,5 +1,8 @@
+// src/components/ImageModal.js
+
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
+import { throttle } from '../services/throttle';
 import './ImageModal.css';
 
 const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
@@ -17,11 +20,19 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
             canvas.width = img.width;
             canvas.height = img.height;
             if (localBgColor === 'transparent') {
-                ctx.fillStyle = ctx.createPattern(createGridPattern(), 'repeat');
+                // Draw a gray grid background
+                const gridSize = 128;
+                for (let x = 0; x < canvas.width; x += gridSize) {
+                    for (let y = 0; y < canvas.height; y += gridSize) {
+                        ctx.fillStyle = ((x / gridSize + y / gridSize) % 2 === 0) ? '#ccc' : '#eee';
+                        ctx.fillRect(x, y, gridSize, gridSize);
+                    }
+                }
             } else {
                 ctx.fillStyle = localBgColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
             ctx.drawImage(img, 0, 0);
         };
         img.onerror = () => {
@@ -30,29 +41,21 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange }) => {
         img.src = getFullImageUrl(nft.imageUrl);
     }, [nft, localBgColor]);
 
-    const createGridPattern = () => {
-        const gridCanvas = document.createElement('canvas');
-        gridCanvas.width = 128;
-        gridCanvas.height = 128;
-        const gridCtx = gridCanvas.getContext('2d');
-
-        gridCtx.fillStyle = '#b3b3b3';
-        gridCtx.fillRect(0, 0, 128, 128);
-        gridCtx.fillStyle = '#e6e6e6';
-        gridCtx.fillRect(0, 0, 64, 64);
-        gridCtx.fillRect(64, 64, 64, 64);
-
-        return gridCanvas;
-    };
-
     useEffect(() => {
         drawImage();
     }, [drawImage]);
 
     const handleColorChange = (color) => {
         setLocalBgColor(color);
-        onBgColorChange(color); // Notify parent component of color change
+        throttledBgColorChange(color);
     };
+
+    const throttledBgColorChange = useCallback(
+        throttle((color) => {
+            onBgColorChange(color);
+        }, 100),
+        []
+    );
 
     const handleSave = async () => {
         setIsSaving(true);
