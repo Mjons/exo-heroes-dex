@@ -11,16 +11,18 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
     const [localBgColor, setLocalBgColor] = useState(bgColor); // Local state for background color
     const canvasRef = useRef(null);
 
-    const drawImage = useCallback(() => {
+    const drawImage = useCallback((isSavingImage = false) => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
         const img = new Image();
+        img.crossOrigin = 'Anonymous'; // Add this line to handle cross-origin images
         img.onload = () => {
             canvas.width = img.width;
             canvas.height = img.height;
-            if (localBgColor === 'transparent') {
+
+            if (localBgColor === 'transparent' && !isSavingImage) {
                 // Draw a gray grid background
                 const gridSize = 128;
                 for (let x = 0; x < canvas.width; x += gridSize) {
@@ -30,8 +32,11 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                     }
                 }
             } else {
-                ctx.fillStyle = localBgColor;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas for transparency
+                if (localBgColor !== 'transparent') {
+                    ctx.fillStyle = localBgColor;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
             }
 
             ctx.drawImage(img, 0, 0);
@@ -45,6 +50,21 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
     useEffect(() => {
         drawImage();
     }, [drawImage]);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'ArrowLeft') {
+                onPrev();
+            } else if (event.key === 'ArrowRight') {
+                onNext();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [onPrev, onNext]);
 
     const throttledColorChange = useCallback(throttle((color) => {
         setLocalBgColor(color);
@@ -64,17 +84,21 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
         }
 
         try {
-            const dataUrl = canvas.toDataURL();
-            const link = document.createElement('a');
-            link.download = `${nft.name}_${localBgColor}.png`;
-            link.href = dataUrl;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            drawImage(true); // Redraw the image without the grid for saving
+            setTimeout(() => {
+                const dataUrl = canvas.toDataURL();
+                const link = document.createElement('a');
+                link.download = `${nft.name}_${localBgColor}.png`;
+                link.href = dataUrl;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                setIsSaving(false);
+                drawImage(); // Redraw the image with the grid after saving
+            }, 100);
         } catch (error) {
             console.error('Error saving image:', error);
             alert('Failed to save image. Please try again.');
-        } finally {
             setIsSaving(false);
         }
     };
@@ -112,7 +136,6 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                     </button>
                 </div>
                 <div className="traits-section">
-                    <h3>Traits:</h3>
                     <ul>
                         {Object.entries(nft.traits).map(([trait, value]) => (
                             <li key={trait}>

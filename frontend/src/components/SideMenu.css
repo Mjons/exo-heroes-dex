@@ -1,21 +1,22 @@
 /* src/components/SideMenu.css */
 
 .side-menu {
-    padding: 10px;
-    background-color: #f5f5f5;
+    padding: 20px;
+    width: 250px;
+    background-color: #fff;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
-    overflow-y: auto;
     position: fixed;
-    height: 100%;
-    width: 250px;
     top: 0;
     left: 0;
+    height: 100%;
+    overflow-y: auto;
     z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .side-menu.dark-mode {
-    background-color: #2a2a2a;
+    background-color: #222;
     color: #fff;
 }
 
@@ -25,36 +26,23 @@
     right: 10px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     color: inherit;
 }
 
-.search-bar {
-    width: 78%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
 .color-picker {
-    margin-bottom: 15px;
-}
-
-.color-picker h3 {
-    margin-bottom: 5px;
-    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .color-options {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
 .color-option {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #ccc;
@@ -63,100 +51,163 @@
 .color-option.transparent-option {
     background: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc),
         linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
-    background-size: 8px 8px;
-    /* Adjust the size to make the squares smaller */
-    background-position: 0 0, 4px 4px;
-    /* Adjust the position for square alignment */
-    border: 2px solid #ccc;
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
 }
 
-.color-option.selected {
-    border: 2px solid #007bff;
-    /* Change border color when selected */
-}
-
-.dark-mode .color-option.selected {
-    border: 2px solid #fff;
-    /* Keep the border white in dark mode */
+.color-option.color-input {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0;
 }
 
 .filter-section {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .filter-section h3 {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-size: 14px;
 }
 
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    margin-bottom: 8px;
+.dark-mode .search-bar {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
 }
 
-.breadcrumb-item {
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.dark-mode .suggestions-list {
+    background-color: #333;
+    border-color: #444;
+}
+
+.suggestions-list li {
+    padding: 8px 10px;
     cursor: pointer;
+    font-size: 14px;
 }
 
-.breadcrumb-separator {
-    margin: 0 5px;
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
 }
 
-.trait-list,
-.value-list {
+.dark-mode .suggestions-list li:hover {
+    background-color: #444;
+}
+
+.trait-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    max-height: 200px;
-    overflow-y: auto;
 }
 
-.trait-list li,
-.value-list li {
-    padding: 5px;
+.trait-header {
+    padding: 10px 5px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #eee;
 }
 
-.trait-list li:hover,
+.dark-mode .trait-header {
+    border-bottom-color: #444;
+}
+
+.trait-header:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .trait-header:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.value-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 15px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.value-list li {
+    padding: 8px 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 .value-list li:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+.dark-mode .value-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.value-list li.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+.dark-mode .value-list li.selected {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .selected-indicator {
     color: #007bff;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .reset-button {
     width: 100%;
-    padding: 8px;
-    background-color: transparent;
-    border: 1px solid #ccc;
+    padding: 12px;
+    background-color: #f0f0f0;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
 }
 
-.dark-mode .search-bar,
+.reset-button:hover {
+    background-color: #e0e0e0;
+}
+
 .dark-mode .reset-button {
-    background-color: #444;
+    background-color: #333;
     color: #fff;
-    border-color: #555;
 }
 
-.dark-mode .trait-list li:hover,
-.dark-mode .value-list li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.dark-mode .reset-button:hover {
+    background-color: #444;
 }
 
 @media (max-width: 768px) {
     .side-menu {
         width: 100%;
+        max-width: none;
     }
 }

@@ -1,3 +1,5 @@
+// src/App.js
+
 import React, { useState, useEffect, useCallback } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
@@ -20,6 +22,7 @@ function AppContent() {
     const [searchQuery, setSearchQuery] = useState('');
     const [suggestedTraits, setSuggestedTraits] = useState([]);
     const [noMatchingTraits, setNoMatchingTraits] = useState(false);
+    const [zoomLevel, setZoomLevel] = useState(2); // Default zoom level (middle)
 
     useEffect(() => {
         const loadData = async () => {
@@ -84,7 +87,7 @@ function AppContent() {
                 const matchingValues = traits[trait].filter(value =>
                     value.toLowerCase().includes(query.toLowerCase())
                 );
-                return acc.concat(matchingValues);
+                return acc.concat(matchingValues.map(value => `${trait}: ${value}`));
             }, []);
             setSuggestedTraits(newSuggestedTraits);
             setNoMatchingTraits(newSuggestedTraits.length === 0);
@@ -95,7 +98,8 @@ function AppContent() {
     }, [traits]);
 
     const handleTraitSelect = useCallback((trait) => {
-        setFilters(prevFilters => ({ ...prevFilters, searchTrait: trait }));
+        const [traitName, traitValue] = trait.split(': ');
+        setFilters(prevFilters => ({ ...prevFilters, [traitName]: traitValue }));
         setSearchQuery('');
         setSuggestedTraits([]);
         setNoMatchingTraits(false);
@@ -112,11 +116,16 @@ function AppContent() {
         setShowFilters(prev => !prev);
     }, []);
 
+    const handleZoomIn = useCallback(() => {
+        setZoomLevel((prev) => Math.min(prev + 1, 4));
+    }, []);
+
+    const handleZoomOut = useCallback(() => {
+        setZoomLevel((prev) => Math.max(prev - 1, 0));
+    }, []);
+
     const filteredNFTs = nfts.filter((nft) => {
         return Object.entries(filters).every(([filterType, filterValue]) => {
-            if (filterType === 'searchTrait') {
-                return Object.values(nft.traits).includes(filterValue);
-            }
             return nft.traits[filterType] === filterValue;
         });
     });
@@ -130,8 +139,8 @@ function AppContent() {
     }, [filteredNFTs, searchQuery]);
 
     const handleTraitClickFromModal = (trait, value) => {
-        setFilters({ [trait]: value });
-        setSelectedNFT(null);
+        setFilters({ [trait]: value });  // This replaces all filters with just the clicked trait
+        setSelectedNFT(null);  // Close the modal
     };
 
     const handlePrev = () => {
@@ -164,6 +173,9 @@ function AppContent() {
                 toggleFilters={toggleFilters}
                 isDarkMode={isDarkMode}
                 toggleTheme={toggleTheme}
+                onZoomIn={handleZoomIn}
+                onZoomOut={handleZoomOut}
+                zoomLevel={zoomLevel}
             />
             <div className="content-area">
                 {showFilters && (
@@ -178,7 +190,8 @@ function AppContent() {
                         onReset={handleReset}
                         isDarkMode={isDarkMode}
                         onClose={() => setShowFilters(false)}
-                        bgColor={bgColor} // Pass bgColor state
+                        bgColor={bgColor}
+                        selectedFilters={filters}
                     />
                 )}
                 <div className="main-content">
@@ -189,7 +202,10 @@ function AppContent() {
                             bgColor={bgColor}
                             noMatchingTraits={noMatchingTraits}
                             isDarkMode={isDarkMode}
-                            searchQuery={searchQuery} // Pass searchQuery state
+                            searchQuery={searchQuery}
+                            zoomLevel={zoomLevel}
+                            onZoomIn={handleZoomIn}
+                            onZoomOut={handleZoomOut}
                         />
                     </div>
                 </div>
@@ -199,11 +215,11 @@ function AppContent() {
                     nft={selectedNFT}
                     onClose={handleCloseModal}
                     isDarkMode={isDarkMode}
-                    bgColor={bgColor} // Pass bgColor state
-                    onBgColorChange={handleBackgroundColorChange} // Pass the color change handler
-                    onTraitClick={handleTraitClickFromModal} // Pass trait click handler
-                    onPrev={handlePrev} // Pass the handlePrev function
-                    onNext={handleNext} // Pass the handleNext function
+                    bgColor={bgColor}
+                    onBgColorChange={handleBackgroundColorChange}
+                    onTraitClick={handleTraitClickFromModal}
+                    onPrev={handlePrev}
+                    onNext={handleNext}
                 />
             )}
         </div>
