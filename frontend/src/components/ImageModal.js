@@ -2,8 +2,8 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
-import { debounce } from '../services/debounce'; // Import the debounce function
-import { throttle } from '../services/throttle'; // Import the throttle function
+import { debounce } from '../services/debounce';
+import { throttle } from '../services/throttle';
 import './ImageModal.css';
 
 const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTraitClick, onPrev, onNext }) => {
@@ -45,6 +45,21 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
     useEffect(() => {
         drawImage();
     }, [drawImage]);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'ArrowLeft') {
+                onPrev();
+            } else if (event.key === 'ArrowRight') {
+                onNext();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [onPrev, onNext]);
 
     const throttledColorChange = useCallback(throttle((color) => {
         setLocalBgColor(color);
@@ -112,7 +127,6 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                     </button>
                 </div>
                 <div className="traits-section">
-                    <h3>Traits:</h3>
                     <ul>
                         {Object.entries(nft.traits).map(([trait, value]) => (
                             <li key={trait}>
