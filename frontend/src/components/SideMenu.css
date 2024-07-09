@@ -31,7 +31,7 @@
 }
 
 .search-bar {
-    width: 93%;
+    width: 78%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -62,18 +62,22 @@
 
 .color-option.transparent-option {
     background: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc),
-                linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
-    background-size: 8px 8px; /* Adjust the size to make the squares smaller */
-    background-position: 0 0, 4px 4px; /* Adjust the position for square alignment */
+        linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+    background-size: 8px 8px;
+    /* Adjust the size to make the squares smaller */
+    background-position: 0 0, 4px 4px;
+    /* Adjust the position for square alignment */
     border: 2px solid #ccc;
 }
 
 .color-option.selected {
-    border: 2px solid #007bff; /* Change border color when selected */
+    border: 2px solid #007bff;
+    /* Change border color when selected */
 }
 
 .dark-mode .color-option.selected {
-    border: 2px solid #fff; /* Keep the border white in dark mode */
+    border: 2px solid #fff;
+    /* Keep the border white in dark mode */
 }
 
 .filter-section {
