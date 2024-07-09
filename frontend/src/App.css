@@ -128,15 +128,7 @@ body.dark-mode {
 }
 
 
-.nft-grid-container {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    /* Ensure items start from the top */
-    padding: 10px;
-    width: 100%;
-}
+
 
 .nft-grid {
     display: grid;
@@ -211,19 +203,6 @@ body.dark-mode {
         justify-content: center;
     }
 
-    .nft-grid {
-        padding: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .nft-item {
-        width: calc(50% - 20px);
-        max-width: none;
-        margin: 10px;
-    }
 }
 
 /* // Application layout */

@@ -41,27 +41,6 @@
     width: 100%;
 }
 
-.nft-grid-container.zoom-level-0 {
-    grid-template-columns: repeat(15, 1fr);
-}
-
-.nft-grid-container.zoom-level-1 {
-    grid-template-columns: repeat(12, 1fr);
-}
-
-.nft-grid-container.zoom-level-2 {
-    grid-template-columns: repeat(9, 1fr);
-}
-
-.nft-grid-container.zoom-level-3 {
-    grid-template-columns: repeat(6, 1fr);
-}
-
-.nft-grid-container.zoom-level-4 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-
 .nft-grid.zoom-level-0 {
     grid-template-columns: repeat(15, 1fr);
 }
@@ -151,15 +130,15 @@
 /* Small mobile styles */
 @media screen and (max-width: 480px) {
     .nft-grid.zoom-level-0 {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .nft-grid.zoom-level-1 {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .nft-grid.zoom-level-2 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .nft-grid.zoom-level-3 {
@@ -169,61 +148,4 @@
     .nft-grid.zoom-level-4 {
         grid-template-columns: repeat(1, 1fr);
     }
-}
-
-@media screen and (max-width: 768px) {
-    .nft-grid-container.zoom-level-0 {
-        grid-template-columns: repeat(6, 1fr);
-    }
-
-    .nft-grid-container.zoom-level-1 {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .nft-grid-container.zoom-level-2 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .nft-grid-container.zoom-level-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .nft-grid-container.zoom-level-4 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .nft-grid-container.zoom-level-0 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .nft-grid-container.zoom-level-1 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .nft-grid-container.zoom-level-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .nft-grid-container.zoom-level-3,
-    .nft-grid-container.zoom-level-4 {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.no-results-message {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 20px;
-    font-size: 18px;
-    color: #666;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.dark-mode .no-results-message {
-    color: #bbb;
-    background-color: #333;
 }
