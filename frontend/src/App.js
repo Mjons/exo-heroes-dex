@@ -18,7 +18,7 @@ function AppContent() {
     const [error, setError] = useState(null);
     const { isDarkMode, toggleTheme } = useTheme();
     const [bgColor, setBgColor] = useState('#FFA500'); // Default to orange
-    const [showFilters, setShowFilters] = useState(window.innerWidth >= 768); // Open filters on desktop, closed on mobile
+    const [showFilters, setShowFilters] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [suggestedTraits, setSuggestedTraits] = useState([]);
     const [noMatchingTraits, setNoMatchingTraits] = useState(false);
@@ -140,7 +140,6 @@ function AppContent() {
                         onReset={handleReset}
                         isDarkMode={isDarkMode}
                         onClose={() => setShowFilters(false)}
-                        selectedColor={bgColor} // Pass bgColor as a prop
                     />
                 )}
                 <div className="main-content">
@@ -160,7 +159,7 @@ function AppContent() {
                     nft={selectedNFT}
                     onClose={handleCloseModal}
                     isDarkMode={isDarkMode}
-                    bgColor={bgColor} // Pass bgColor as a prop
+                    bgColor={bgColor} // Pass the background color to the modal
                 />
             )}
         </div>

@@ -4,9 +4,9 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
 import './ImageModal.css';
 
-const ImageModal = ({ nft, onClose, isDarkMode }) => {
-    const [bgColor, setBgColor] = useState('#FFA500'); // Default to Orange
+const ImageModal = ({ nft, onClose, isDarkMode, bgColor }) => {
     const [isSaving, setIsSaving] = useState(false);
+    const [localBgColor, setLocalBgColor] = useState(bgColor); // Local state for background color
     const canvasRef = useRef(null);
 
     const drawImage = useCallback(() => {
@@ -18,35 +18,41 @@ const ImageModal = ({ nft, onClose, isDarkMode }) => {
         img.onload = () => {
             canvas.width = img.width;
             canvas.height = img.height;
-
-            if (bgColor === 'transparent') {
-                // Draw a gray grid background
-                const gridSize = 128;
-                for (let x = 0; x < canvas.width; x += gridSize) {
-                    for (let y = 0; y < canvas.height; y += gridSize) {
-                        ctx.fillStyle = ((x / gridSize + y / gridSize) % 2 === 0) ? '#ccc' : '#eee';
-                        ctx.fillRect(x, y, gridSize, gridSize);
-                    }
-                }
+            if (localBgColor === 'transparent') {
+                ctx.fillStyle = ctx.createPattern(createGridPattern(), 'repeat');
             } else {
-                ctx.fillStyle = bgColor;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = localBgColor;
             }
-
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(img, 0, 0);
         };
         img.onerror = () => {
             console.error('Failed to load image:', getFullImageUrl(nft.imageUrl));
         };
         img.src = getFullImageUrl(nft.imageUrl);
-    }, [nft, bgColor]);
+    }, [nft, localBgColor]);
+
+    const createGridPattern = () => {
+        const gridCanvas = document.createElement('canvas');
+        gridCanvas.width = 128;
+        gridCanvas.height = 128;
+        const gridCtx = gridCanvas.getContext('2d');
+
+        gridCtx.fillStyle = '#b3b3b3';
+        gridCtx.fillRect(0, 0, 128, 128);
+        gridCtx.fillStyle = '#e6e6e6';
+        gridCtx.fillRect(0, 0, 64, 64);
+        gridCtx.fillRect(64, 64, 64, 64);
+
+        return gridCanvas;
+    };
 
     useEffect(() => {
         drawImage();
     }, [drawImage]);
 
     const handleColorChange = (color) => {
-        setBgColor(color);
+        setLocalBgColor(color);
     };
 
     const handleSave = async () => {
@@ -60,7 +66,7 @@ const ImageModal = ({ nft, onClose, isDarkMode }) => {
         try {
             const dataUrl = canvas.toDataURL();
             const link = document.createElement('a');
-            link.download = `${nft.name}_${bgColor}.png`;
+            link.download = `${nft.name}_${localBgColor}.png`;
             link.href = dataUrl;
             document.body.appendChild(link);
             link.click();
@@ -86,20 +92,12 @@ const ImageModal = ({ nft, onClose, isDarkMode }) => {
                 <div className="color-options">
                     <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
                     <button onClick={() => handleColorChange('transparent')}>Transparent</button>
-                    <button>
-                        Custom
+                    <button>Custom
                         <input
                             type="color"
                             onChange={(e) => handleColorChange(e.target.value)}
-                            value={bgColor}
+                            value={localBgColor}
                         />
-                    </button>
-                    <button
-                        className="save-button"
-                        onClick={handleSave}
-                        disabled={isSaving}
-                    >
-                        {isSaving ? 'Saving...' : 'Save Image'}
                     </button>
                 </div>
                 <div className="traits-section">
@@ -112,6 +110,13 @@ const ImageModal = ({ nft, onClose, isDarkMode }) => {
                         ))}
                     </ul>
                 </div>
+                <button
+                    className="save-button"
+                    onClick={handleSave}
+                    disabled={isSaving}
+                >
+                    {isSaving ? 'Saving...' : 'Save Image'}
+                </button>
             </div>
         </div>
     );
