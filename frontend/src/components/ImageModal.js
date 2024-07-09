@@ -2,6 +2,8 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
+import { debounce } from '../services/debounce'; // Import the debounce function
+import { throttle } from '../services/throttle'; // Import the throttle function
 import './ImageModal.css';
 
 const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTraitClick, onPrev, onNext }) => {
@@ -44,9 +46,13 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
         drawImage();
     }, [drawImage]);
 
-    const handleColorChange = (color) => {
+    const throttledColorChange = useCallback(throttle((color) => {
         setLocalBgColor(color);
         onBgColorChange(color); // Notify parent component of color change
+    }, 100), [onBgColorChange]);
+
+    const handleColorChange = (color) => {
+        throttledColorChange(color);
     };
 
     const handleSave = async () => {

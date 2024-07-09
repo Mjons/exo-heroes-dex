@@ -43,6 +43,7 @@
     color: var(--modal-text-color);
     font-size: 24px;
     cursor: pointer;
+    z-index: 1001;
 }
 
 h2 {
@@ -125,7 +126,7 @@ canvas {
 
 .prev-link, .next-link {
     cursor: pointer;
-    color: #007bff;
+    color: black; /* Change hyperlink text color to black in light mode */
     text-decoration: underline;
     font-size: 20px; /* Half the previous font size */
     font-weight: bold; /* Make it bold */
@@ -158,6 +159,26 @@ canvas {
     align-items: center;
     width: 100%;
     position: relative;
+}
+
+.trait-link {
+    cursor: pointer;
+    color: black; /* Change hyperlink text color to black in light mode */
+    text-decoration: none;
+}
+
+.trait-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.dark-mode .trait-link {
+    color: #fff;
+}
+
+.dark-mode .trait-link:hover {
+    color: #ccc;
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
