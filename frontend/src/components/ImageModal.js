@@ -2,13 +2,12 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { getFullImageUrl } from '../services/api';
-import { debounce } from '../services/debounce'; // Import the debounce function
-import { throttle } from '../services/throttle'; // Import the throttle function
+import { throttle } from '../services/throttle';
 import './ImageModal.css';
 
 const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTraitClick, onPrev, onNext }) => {
     const [isSaving, setIsSaving] = useState(false);
-    const [localBgColor, setLocalBgColor] = useState(bgColor); // Local state for background color
+    const [localBgColor, setLocalBgColor] = useState(bgColor);
     const canvasRef = useRef(null);
 
     const drawImage = useCallback((isSavingImage = false) => {
@@ -17,14 +16,14 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
 
         const ctx = canvas.getContext('2d');
         const img = new Image();
-        img.crossOrigin = 'Anonymous'; // Add this line to handle cross-origin images
+        img.crossOrigin = 'Anonymous';
         img.onload = () => {
             canvas.width = img.width;
             canvas.height = img.height;
 
             if (localBgColor === 'transparent' && !isSavingImage) {
                 // Draw a gray grid background
-                const gridSize = 128;
+                const gridSize = 20;
                 for (let x = 0; x < canvas.width; x += gridSize) {
                     for (let y = 0; y < canvas.height; y += gridSize) {
                         ctx.fillStyle = ((x / gridSize + y / gridSize) % 2 === 0) ? '#ccc' : '#eee';
@@ -32,7 +31,7 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                     }
                 }
             } else {
-                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas for transparency
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
                 if (localBgColor !== 'transparent') {
                     ctx.fillStyle = localBgColor;
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -68,7 +67,7 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
 
     const throttledColorChange = useCallback(throttle((color) => {
         setLocalBgColor(color);
-        onBgColorChange(color); // Notify parent component of color change
+        onBgColorChange(color);
     }, 100), [onBgColorChange]);
 
     const handleColorChange = (color) => {
@@ -84,7 +83,7 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
         }
 
         try {
-            drawImage(true); // Redraw the image without the grid for saving
+            drawImage(true);
             setTimeout(() => {
                 const dataUrl = canvas.toDataURL();
                 const link = document.createElement('a');
@@ -94,7 +93,7 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                 link.click();
                 document.body.removeChild(link);
                 setIsSaving(false);
-                drawImage(); // Redraw the image with the grid after saving
+                drawImage();
             }, 100);
         } catch (error) {
             console.error('Error saving image:', error);
@@ -120,11 +119,12 @@ const ImageModal = ({ nft, onClose, isDarkMode, bgColor, onBgColorChange, onTrai
                 <div className="color-options">
                     <button onClick={() => handleColorChange('#FFA500')}>Orange</button>
                     <button onClick={() => handleColorChange('transparent')}>Transparent</button>
-                    <button>Custom
+                    <button>
+                        Custom
                         <input
                             type="color"
                             onChange={(e) => handleColorChange(e.target.value)}
-                            value={localBgColor}
+                            value={localBgColor !== 'transparent' ? localBgColor : '#FFFFFF'}
                         />
                     </button>
                     <button
