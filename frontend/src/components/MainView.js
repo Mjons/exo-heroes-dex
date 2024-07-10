@@ -33,18 +33,6 @@ const MainView = ({ nfts, onNFTClick, bgColor, noMatchingTraits, isDarkMode, sea
         }
     };
 
-    const getBackgroundStyle = (color) => {
-        if (color === 'transparent') {
-            return {
-                backgroundImage: 'linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%)',
-                backgroundSize: '20px 20px',
-                backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-            };
-        } else {
-            return { backgroundColor: color };
-        }
-    };
-
     return (
         <div className={`main-view ${isDarkMode ? 'dark-mode' : ''}`}>
             <div className="zoom-controls">
@@ -68,7 +56,7 @@ const MainView = ({ nfts, onNFTClick, bgColor, noMatchingTraits, isDarkMode, sea
                             key={nft.id}
                             className="nft-item"
                             onClick={() => onNFTClick(nft)}
-                            style={getBackgroundStyle(bgColor)}
+                            style={{ backgroundColor: bgColor !== 'transparent' ? bgColor : 'white' }}
                         >
                             <div className="image-container">
                                 <img src={getFullImageUrl(nft.imageUrl)} alt={nft.name} />
