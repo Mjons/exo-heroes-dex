@@ -7,7 +7,6 @@ import ImageModal from './components/ImageModal';
 import TopMenuBar from './components/TopMenuBar';
 import { fetchNFTs, fetchTraits } from './services/api';
 import { ThemeProvider, useTheme } from './ThemeContext';
-import ReturnButton from './ReturnButton';
 import './App.css';
 
 function AppContent() {
@@ -232,14 +231,6 @@ function App() {
         <ThemeProvider>
             <AppContent />
         </ThemeProvider>
-    );
-}
-
-function App() {
-    return (
-        <div className="App">
-            <ReturnButton />
-        </div>
     );
 }
 
