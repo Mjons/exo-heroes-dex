@@ -5,9 +5,9 @@ import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
 import ImageModal from './components/ImageModal';
 import TopMenuBar from './components/TopMenuBar';
+import ReturnButton from './components/ReturnButton';  // Import the ReturnButton component
 import { fetchNFTs, fetchTraits } from './services/api';
 import { ThemeProvider, useTheme } from './ThemeContext';
-import ReturnButton from './ReturnButton';
 import './App.css';
 
 function AppContent() {
@@ -208,6 +208,7 @@ function AppContent() {
                             onZoomIn={handleZoomIn}
                             onZoomOut={handleZoomOut}
                         />
+                        <ReturnButton /> {/* Add the ReturnButton component */}
                     </div>
                 </div>
             </div>
@@ -232,14 +233,6 @@ function App() {
         <ThemeProvider>
             <AppContent />
         </ThemeProvider>
-    );
-}
-
-function App() {
-    return (
-        <div className="App">
-            <ReturnButton />
-        </div>
     );
 }
 
