@@ -26,3 +26,5 @@ on terminal CMD to start:
 
 \exo-heroes-dex\backend>node server.js
 \exo-heroes-dex\frontend>yarn start
+
+If AUTH is asked type your Username of GitHub and use the TOKEN PAT as your PW 
