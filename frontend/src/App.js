@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import MainView from './components/MainView';
 import SideMenu from './components/SideMenu';
 import ImageModal from './components/ImageModal';
-import TopMenuBar from './components/TopMenuBar';
+import TopMenuBar from './components/TopMenuBar';  // Import the updated TopMenuBar component
 import { fetchNFTs, fetchTraits } from './services/api';
 import { ThemeProvider, useTheme } from './ThemeContext';
 import './App.css';
@@ -173,9 +173,6 @@ function AppContent() {
                 toggleFilters={toggleFilters}
                 isDarkMode={isDarkMode}
                 toggleTheme={toggleTheme}
-                onZoomIn={handleZoomIn}
-                onZoomOut={handleZoomOut}
-                zoomLevel={zoomLevel}
             />
             <div className="content-area">
                 {showFilters && (
@@ -234,4 +231,7 @@ function App() {
     );
 }
 
+
 export default App;
+
+

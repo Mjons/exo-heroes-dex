@@ -9,18 +9,35 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    position: relative; /* Add relative positioning */
 }
 
-.top-menu-bar button {
+.menu-button {
     padding: 5px 10px;
     border: none;
     background-color: #ddd;
     cursor: pointer;
 }
 
+.return-button {
+    position: absolute; /* Use absolute positioning */
+    left: 100px; /* Adjust this value to move it left or right */
+    top: 10px; /* Adjust this value to move it up or down */
+    background-color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 1.5px 10px;
+    font-size: 16px;
+}
+
 .social-links {
     display: flex;
     gap: 10px;
+    top: 12px; /* Adjust this value to move it up or down */
+    justify-content: center; /* Adjust this if necessary */
+    position: absolute; /* Use absolute positioning */
+    left: 50%; /* Center the social links */
+    transform: translateX(-50%); /* Center the social links */
 }
 
 .social-link {

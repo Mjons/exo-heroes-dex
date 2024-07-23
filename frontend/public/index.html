@@ -12,11 +12,24 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>NFT Collection Organizer</title>
+    <!-- Add the returnToGame script here -->
+    <script>
+        function returnToGame() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const returnUrl = urlParams.get('returnUrl');
+            const posX = urlParams.get('posX');
+            const posY = urlParams.get('posY');
+            const direction = urlParams.get('direction');
+            window.location.href = `${returnUrl}?posX=${posX}&posY=${posY}&direction=${direction}`;
+        }
+    </script>
 </head>
 
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- Add the return button here -->
+    <button onclick="returnToGame()">Return to Game</button>
 </body>
 
 </html>
