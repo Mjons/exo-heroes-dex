@@ -22,7 +22,7 @@ const TopMenuBar = ({ toggleFilters, isDarkMode, toggleTheme }) => {
     return (
         <div className={`top-menu-bar ${isDarkMode ? 'dark-mode' : ''}`}>
             <button onClick={toggleFilters} className="menu-button">Filters</button>
-            <button onClick={returnToGame} className="menu-button return-button">Return to Game</button>
+            <button onClick={returnToGame} className="menu-button return-button">Back to Lab</button>
             <div className="social-links">
                 <a href="https://x.com/ExOHeroesNFT" target="_blank" rel="noopener noreferrer" className="social-link">
                     <img src={myLogo1} alt="Logo 1" className="social-icon" />
